@@ -1,0 +1,176 @@
+[ITEM]
+{
+Lance
+slot:weapon
+strength:10
+dexterity:15
+[DESC]
+{
+La lance, en bois mêlé d'acier, permet de tuer un adversaire à longue portée avant qu'il ait le temps de dire "Oups" !
+}
+}
+[ITEM]
+{
+Stylo
+slot:weapon
+strength:1
+dexterity:2
+[DESC]
+{
+Le stylo est peu efficace même s'il peut sauver en situation de crise. Toujours avoir un stylo à portée de main !
+}
+}
+[ITEM]
+{
+Baguette de sureau
+slot:weapon
+strength:-2
+dexterity:-1
+[DESC]
+{
+Le sureau est un bois d'une qualité remarquable, et nous connaissons tous l'ancien propriétaire de cette baguette... Malheureusement, on ignore encore s'il a jeté un sort sur sa baguette.
+}
+}
+[ITEM]
+{
+Baguette magique
+slot:weapon
+strength:30
+dexterity:25
+[DESC]
+{
+Les baguettes magiques sont les armes de prédilection des fées, de simples bâtons surmontés d'une étoile... rose.
+}
+}
+[ITEM]
+{
+Epée d'entraînement
+slot:weapon
+strength:5
+dexterity:2
+[DESC]
+{
+L'épée d'entraînement est constituée de bois. Elle inflige des dégâts légers à son adversaire.
+}
+}
+[ITEM]
+{
+Epée en bronze
+slot:weapon
+strength:10
+dexterity:5
+[DESC]
+{
+L'épée en bronze assomme proprement un ennemi.
+}
+}
+[ITEM]
+{
+Epée Valkyrie Spirit
+slot:weapon
+strength:20
+dexterity:10
+[DESC]
+{
+L'épée Valkyrie Spirit, en fer, coupe n'importe quoi (ou n'importe qui) !
+}
+}
+[ITEM]
+{
+Excalibur
+slot:weapon
+strength:50
+dexterity:30
+[DESC]
+{
+Excalibur est une épée en acier qui décapite facilement un ennemi trop véloce...
+}
+}
+[ITEM]
+{
+Titania
+slot:weapon
+strength:-10
+dexterity:-5
+[DESC]
+{
+Titania, épée forgée en titane, a été conçue à partir d'un matériau connu pour sa... résistance !
+}
+}
+[ITEM]
+{
+Poignard
+slot:weapon
+strength:10
+dexterity:10
+[DESC]
+{
+Le poignard en argent coupe comme du beurre... Attention dans la poche !
+}
+}
+[ITEM]
+{
+Couteau à bout rond
+slot:weapon
+strength:1
+dexterity:5
+[DESC]
+{
+Le couteau à bout rond est facile à manier mais peu fiable pour blesser un adversaire.
+}
+[ITEM]
+{
+Couteau suisse
+slot:weapon
+strength:5
+dexterity:2
+[DESC]
+{
+Le couteau elfique, en bois finement travaillé, est multi-fonction.
+Gare aux erreurs de manipulation !
+}
+}
+[ITEM]
+{
+Shuriken
+slot:weapon
+strength:15
+dexterity:20
+[DESC]
+{
+Le shuriken est une étoile de jet fabriquée par des tortues ninjas.
+}
+}
+[ITEM]
+{
+Hachette
+slot:weapon
+strength:5
+dexterity:1
+[DESC]
+{
+La hachette est surtout utilisée pour couper du bois.
+}
+}
+[ITEM]
+{
+Haches en bronze
+slot:weapon
+strength:15
+dexterity:10
+[DESC]
+{
+Les haches en bronze vont de paire et font un malheur (ou un massacre...) auprès de leur adversaire !
+}
+}
+[ITEM]
+{
+Haches en fer d'Hymlia
+slot:weapon
+strength:30
+dexterity:30
+[DESC]
+{
+Les haches en fer d'Hymlia, forgées selon la légende par le peuple nain, sont d'un robustesse à toute épreuve.
+}
+}
