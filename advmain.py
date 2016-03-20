@@ -42,14 +42,21 @@ VOID_BLOCK = 0
 GRASS_BLOCK = 1
 GROUND_BLOCK = 2
 
+DIRT_ROAD_UP = 10
+DIRT_ROAD_DOWN = 11
+DIRT_ROAD_LEFT = 12
+DIRT_ROAD_RIGHT = 13
+DIRT_ROAD_UP_TO_LEFT = 14
+DIRT_ROAD_EDGE_UP_LEFT = 15
+
 slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
-blockIndex = {VOID_BLOCK : "void.jpg", GRASS_BLOCK : "Herbe.jpg", GROUND_BLOCK : "plancher64.jpg"}
+blockIndex = {VOID_BLOCK : "void.jpg", GRASS_BLOCK : "Herbe.jpg", GROUND_BLOCK : "plancher64.jpg", DIRT_ROAD_UP : "dirt_road_up.png", DIRT_ROAD_DOWN : "dirt_road_down.png", DIRT_ROAD_LEFT : "dirt_road_left.png", DIRT_ROAD_RIGHT : "dirt_road_right.png", DIRT_ROAD_UP_TO_LEFT : "dirt_road_up_to_left.png", DIRT_ROAD_EDGE_UP_LEFT : "dirt_road_edge_up_left.png"}
 
 #Dictionnaire de soliditÃƒÆ’Ã‚Â© des blocs
-solidIndex = {VOID_BLOCK : True, GRASS_BLOCK: False, GROUND_BLOCK : False}
+solidIndex = {VOID_BLOCK : True, GRASS_BLOCK: False, GROUND_BLOCK : False, DIRT_ROAD_UP : False, DIRT_ROAD_DOWN : FALSE, DIRT_ROAD_LEFT : False, DIRT_ROAD_RIGHT : False, DIRT_ROAD_UP_TO_LEFT : False, DIRT_ROAD_EDGE_UP_LEFT : False}
 
 #Dictionnaire des ennemis - ChargÃ© depuis les fichiers
 enemyIndex = {}
