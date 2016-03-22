@@ -1,10 +1,8 @@
 from window import *
-import winsound
 import math
 import time
 import random
 import pickle
-from threading import Thread
 import os.path
 
 #Initialisation des variables globales.
@@ -36,7 +34,7 @@ y = 3
 direction = "Up"
 l = [False]
 
-#DÃ©claration des blocs sous forme de constantes.
+#DÃƒÂ©claration des blocs sous forme de constantes.
 
 VOID_BLOCK = 0
 GRASS_BLOCK = 1
@@ -55,38 +53,34 @@ caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 #Dictionnaire vers les images des blocs
 blockIndex = {VOID_BLOCK : "void.jpg", GRASS_BLOCK : "Herbe.jpg", GROUND_BLOCK : "plancher64.jpg", DIRT_ROAD_UP : "dirt_road_up.png", DIRT_ROAD_DOWN : "dirt_road_down.png", DIRT_ROAD_LEFT : "dirt_road_left.png", DIRT_ROAD_RIGHT : "dirt_road_right.png", DIRT_ROAD_UP_TO_LEFT : "dirt_road_up_to_left.png", DIRT_ROAD_EDGE_UP_LEFT : "dirt_road_edge_up_left.png"}
 
-#Dictionnaire de soliditÃƒÆ’Ã‚Â© des blocs
+#Dictionnaire de soliditÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© des blocs
 solidIndex = {VOID_BLOCK : True, GRASS_BLOCK: False, GROUND_BLOCK : False, DIRT_ROAD_UP : False, DIRT_ROAD_DOWN : FALSE, DIRT_ROAD_LEFT : False, DIRT_ROAD_RIGHT : False, DIRT_ROAD_UP_TO_LEFT : False, DIRT_ROAD_EDGE_UP_LEFT : False}
 
-#Dictionnaire des ennemis - ChargÃ© depuis les fichiers
+#Dictionnaire des ennemis - ChargÃƒÂ© depuis les fichiers
 enemyIndex = {}
 
-#Dictionnaire des objets - ChargÃ© depuis les fichiers
+#Dictionnaire des objets - ChargÃƒÂ© depuis les fichiers
 itemIndex = {}
 
-#Dictionnaire reprÃ©sentant les caractÃ©ristiques de l'ennemi que l'on combat
+#Dictionnaire reprÃƒÂ©sentant les caractÃƒÂ©ristiques de l'ennemi que l'on combat
 estats = {}
 
-#Dictionnaire reprÃ©sentant les caractÃ©ristiques du joueur - Caractéristiques de base.
+#Dictionnaire reprÃƒÂ©sentant les caractÃƒÂ©ristiques du joueur - CaractÃ©ristiques de base.
 stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
 
-#Variable globale utilisÃ©e en combat
+#Variable globale utilisÃƒÂ©e en combat
 myTurn = False
 
-#Dictionnaire associant une image Ã  un nom
+#Dictionnaire associant une image ÃƒÂ  un nom
 images = {}
 
-#Dictionnaire contenant les dialogues des diffÃ©rents pnjs
+#Dictionnaire contenant les dialogues des diffÃƒÂ©rents pnjs
 dialogs = {}
 
-musicThread = None
+lastMove = 0
 
-def playMusic(path):#TODO
-    global musicThread
-    if musicThread is not None:
-        musicThread.stop()
-    musicThread = Thread(target = lambda : winsound.PlaySound(path,winsound.SND_FILENAME))
-    musicThread.start()
+def playMusic(path):
+    pass
 
 def nothing():
     pass
@@ -262,7 +256,7 @@ def doSkill(skill):
     txt.delete("all")
     main.delete("to_delete")
     if estats["HP"] <= 0:
-        message("Vous Ãªtes victorieux !", testLoot)
+        message("Vous ÃƒÂªtes victorieux !", testLoot)
         clearMain()
         showMenu()
         draw(xOffset,yOffset)
@@ -421,14 +415,14 @@ def displayChar():
     txt.create_text(15, 95, text = "Armor : " + str(stats["armor"]), anchor = NW)
 
     if stats["lvlPoints"] != 0:
-        txt.create_text(150, 15, text = "Points à dépenser : " + str(stats["lvlPoints"]), anchor = NW)
+        txt.create_text(150, 15, text = "Points Ã  dÃ©penser : " + str(stats["lvlPoints"]), anchor = NW)
         b = Button(txt, text = "+ Strength", command = lambda i = "strength" : attribPoint(i))
         b.place(x = 150, y = 35, height = 20, width = 64)
         b = Button(txt, text = "+ Widsom", command = lambda i = "wisdom" : attribPoint(i))
         b.place(x = 150, y = 55, height = 20, width = 64)
         b = Button(txt, text = "+ Dexterity", command = lambda i = "dexterity" : attribPoint(i))
         b.place(x = 150, y = 75, height = 20, width = 64)
-    
+
     txt.create_text(300, 15, text = "LVL : " + str(stats["LVL"]), anchor = NW)
 
     exp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 50, maximum = calcXP(stats["LVL"]), value = stats["XP"], style = "green.Horizontal.TProgressbar")
@@ -449,13 +443,13 @@ def displayChar():
     b = Button(txt, text = "Retour", command = back)
     b.place(x = 550, y = 60, width = 108, height = 64)
 
-def inventoryEquip(item): # Fonction pour équiper un objet  depuis l'inventaire
+def inventoryEquip(item): # Fonction pour Ã©quiper un objet  depuis l'inventaire
     global stats, itemIndex
-    if stats["items"][itemIndex[item]["slot"]] != "VOID": #Si on a déjà un objet équipé dans cet emplacement, on le déséquipe
+    if stats["items"][itemIndex[item]["slot"]] != "VOID": #Si on a dÃ©jÃ  un objet Ã©quipÃ© dans cet emplacement, on le dÃ©sÃ©quipe
         unequip(stats["items"][itemIndex[item]["slot"]])
-    equip(item) # On équipe l'objet
+    equip(item) # On Ã©quipe l'objet
     clearTxt() # On efface la zone de texte
-    displayInventory() #Et on réaffiche l'inventaire
+    displayInventory() #Et on rÃ©affiche l'inventaire
 
 def invToMenu():
     global txt
@@ -610,12 +604,15 @@ def fight(name):
 
 def pnjDialog(canvas, name):
     global dialogs
-    dialog(canvas, dialogs[name], unlock)
+    if len(dialogs[name]) != 0:
+        dialog(canvas, dialogs[name], unlock)
+    else:
+        unlock()
 
 def blockAction(block):
   global stats
   if block == VOID_BLOCK:
-    #playMusic('test.wav')
+    playMusic('test.wav')
     message("LE CHAMPOMY C'EST POUR LES FAIBLES !", unlock)
 
 def triggerAction(x , y, name):
@@ -799,7 +796,7 @@ def unequip(name):
 
 
 def keyListener(event):
-  global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt
+  global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt, lastMove
   if isLocked() == True:
     a = event.keycode
     vx = 0
@@ -820,12 +817,12 @@ def keyListener(event):
       vy -= 1
       direction = "Up"
       images["player"] = images["Up"]
-
-    if (vx != 0 or vy != 0) and solidIndex[blocks[ x + vx + ( y + vy ) * width]] == False and pnjs[x + vx + ( y + vy ) * width] == -1:
+    if (vx != 0 or vy != 0) and solidIndex[blocks[ x + vx + ( y + vy ) * width]] == False and pnjs[x + vx + ( y + vy ) * width] == -1 and (time.time() - lastMove >= 1 / 10):
       x += vx
       y += vy
       xOffset += vx
       yOffset += vy
+      lastMove = time.time()
       for trigger in triggers[x + y * width]:
         triggerAction(x, y, trigger)
     if a == ENTER:
@@ -900,7 +897,7 @@ f.close()
 if os.path.exists("test.save"):
     load()
 else:
-    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]} 
+    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
     f = open('level1.level','r')
     loadResources(f)
     f.close()
