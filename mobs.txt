@@ -20,3 +20,26 @@ VOID
 DA BANHAMMER
 }
 }
+[ENEMY]
+{
+Slime
+TODO
+proba:10
+lvl:5
+maxHP:25
+HP:25
+strength:7
+wisdom:1
+dexterity:4
+armor:2
+[SKILLS]
+{
+Slurp
+Blub
+}
+[LOOT]
+{
+VOID
+Bave de Slime
+}
+}
