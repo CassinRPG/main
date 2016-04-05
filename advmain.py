@@ -479,6 +479,7 @@ def inventoryEquip(item): # Fonction pour Ã©quiper un objet  depuis l'inventai
 def invToMenu():
     global txt
     txt.delete("all")
+    clearTxt()
     clearMenu()
     showMenu()
 
@@ -916,6 +917,10 @@ def draw(xOffset, yOffset):
   main.create_image((x - xOffset) * IMAGE_SIZE, (y - yOffset) * IMAGE_SIZE, anchor = NW, image = images["player"])
 
 f = open('items.txt', 'r')
+loadResources(f)
+f.close()
+
+f = open('mobs.txt','r')
 loadResources(f)
 f.close()
 
