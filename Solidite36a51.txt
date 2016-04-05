@@ -1,0 +1,1 @@
+, GTORCHED_TREE1 : True, GTORCHED_TREE2 : True, DTORCHED_TREE1 : True, DTORCHED_TREE2 : True, TRAN_DG_(0,0) : False, TRAN_DG_(0,1) : False, TRAN_DG_(1,0) : False, TRAN_DG_(1,1) : False, TRAN_GD_(0,0) : False, TRAN_GD_(0,1) : False, TRAN_GD_(1,0) : False, TRAN_GD_(1,1) : False, TRAN_HOR1 : False, TRAN_HOR2 : False, TRAN_VER1 : False, TRAN_VER2 : False}
