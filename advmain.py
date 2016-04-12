@@ -34,7 +34,7 @@ y = 3
 direction = "Up"
 l = [False]
 
-#DÃƒÂ©claration des blocs sous forme de constantes.
+#DÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©claration des blocs sous forme de constantes.
 
 VOID_BLOCK = 0
 GRASS = 1
@@ -78,28 +78,28 @@ caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
 blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg"}
-
-#Dictionnaire de soliditÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© des blocs
+#Dictionnaire de soliditÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© des blocs
 solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True }
-#Dictionnaire des ennemis - ChargÃƒÂ© depuis les fichiers
+
+#Dictionnaire des ennemis - ChargÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© depuis les fichiers
 enemyIndex = {}
 
-#Dictionnaire des objets - ChargÃƒÂ© depuis les fichiers
+#Dictionnaire des objets - ChargÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© depuis les fichiers
 itemIndex = {}
 
-#Dictionnaire reprÃƒÂ©sentant les caractÃƒÂ©ristiques de l'ennemi que l'on combat
+#Dictionnaire reprÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sentant les caractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques de l'ennemi que l'on combat
 estats = {}
 
-#Dictionnaire reprÃƒÂ©sentant les caractÃƒÂ©ristiques du joueur - CaractÃ©ristiques de base.
+#Dictionnaire reprÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sentant les caractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques du joueur - CaractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques de base.
 stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
 
-#Variable globale utilisÃƒÂ©e en combat
+#Variable globale utilisÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©e en combat
 myTurn = False
 
-#Dictionnaire associant une image ÃƒÂ  un nom
+#Dictionnaire associant une image ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  un nom
 images = {}
 
-#Dictionnaire contenant les dialogues des diffÃƒÂ©rents pnjs
+#Dictionnaire contenant les dialogues des diffÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©rents pnjs
 dialogs = {}
 
 lastMove = 0
@@ -281,7 +281,7 @@ def doSkill(skill):
     txt.delete("all")
     main.delete("to_delete")
     if estats["HP"] <= 0:
-        message("Vous ÃƒÂªtes victorieux !", testLoot)
+        message("Vous Ãªtes victorieux !", testLoot)
         clearMain()
         showMenu()
         draw(xOffset,yOffset)
@@ -289,30 +289,54 @@ def doSkill(skill):
     else:
         changeTurn()
 
-def zbra():
-    global myTurn, stats, estats
-    if myTurn:
-        if dodgeTest():
-             pass
-    #        dealDamage(int(0.5 * stats["strength"] + 0.5 * stats["dexterity"]))
-    else:
-        if dodgeTest():
-             pass
-    #        takeDamage(0.5 * estats["strength"] + 0.5 * estats["dexterity"])
-
-
 def strike():
     global myTurn, stats, estats
     if myTurn:
-        if dodgeTest() and stats["MP"] >= 5:
+        if dodgeTest():
             dealDamage(0.5 * stats["strength"] + 0.5 * stats["dexterity"])
     else:
         if dodgeTest():
             takeDamage(0.5 * estats["strength"] + 0.5 * estats["dexterity"])
 
-skills = {"strike" : strike, "zbra" : zbra}
+def blub():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(0.2 * stats["HP"] + 1)
+    else:
+        if dodgeTest():
+            takeDamage(0.2 * estats["HP"] + 1)
 
-skillsDesc = {"strike" : {"MP" : "0" , "desc" : "Un coup de base."}, "zbra" : {"MP" : "0", "desc" : "LOL TEST"}}
+def slurp():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(0.2 * stats["strength"])
+    else:
+        if dodgeTest():
+            takeDamage(0.2 * estats["strength"])
+
+def bite():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(stats["strength"])
+    else:
+        if dodgeTest():
+            takeDamage(0.2 * estats["strength"])
+
+def clawing():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(stats["strength"])
+    else:
+        if dodgeTest():
+            takeDamage(0.2 * estats["strength"])
+
+skills = {"strike" : strike, "Blub" : blub, "Slurp": slurp, "Bite" : bite, "Clawing" : clawing}
+
+skillsDesc = {"strike" : {"MP" : "0" , "desc" : "Un coup de base."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}}
 
 def titleToGame():
     global c
@@ -440,7 +464,7 @@ def displayChar():
     txt.create_text(15, 95, text = "Armor : " + str(stats["armor"]), anchor = NW)
 
     if stats["lvlPoints"] != 0:
-        txt.create_text(150, 15, text = "Points Ã  dÃ©penser : " + str(stats["lvlPoints"]), anchor = NW)
+        txt.create_text(150, 15, text = "Points ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©penser : " + str(stats["lvlPoints"]), anchor = NW)
         b = Button(txt, text = "+ Strength", command = lambda i = "strength" : attribPoint(i))
         b.place(x = 150, y = 35, height = 20, width = 64)
         b = Button(txt, text = "+ Widsom", command = lambda i = "wisdom" : attribPoint(i))
@@ -468,13 +492,13 @@ def displayChar():
     b = Button(txt, text = "Retour", command = back)
     b.place(x = 550, y = 60, width = 108, height = 64)
 
-def inventoryEquip(item): # Fonction pour Ã©quiper un objet  depuis l'inventaire
+def inventoryEquip(item): # Fonction pour ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quiper un objet  depuis l'inventaire
     global stats, itemIndex
-    if stats["items"][itemIndex[item]["slot"]] != "VOID": #Si on a dÃ©jÃ  un objet Ã©quipÃ© dans cet emplacement, on le dÃ©sÃ©quipe
+    if stats["items"][itemIndex[item]["slot"]] != "VOID": #Si on a dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©jÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  un objet ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© dans cet emplacement, on le dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipe
         unequip(stats["items"][itemIndex[item]["slot"]])
-    equip(item) # On Ã©quipe l'objet
+    equip(item) # On ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipe l'objet
     clearTxt() # On efface la zone de texte
-    displayInventory() #Et on rÃ©affiche l'inventaire
+    displayInventory() #Et on rÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©affiche l'inventaire
 
 def invToMenu():
     global txt
@@ -658,9 +682,35 @@ def triggerAction(x , y, name):
   elif name.startswith("MESSAGE:"):
     lock()
     message(name[len("MESSAGE:"):], unlock)
+  elif name.startswith("REGEN"):
+    lock()
+    message("Voyageur, bouffe AGNAGNAGN", regenMenu)
+
+def regenToGame():
+    global txt
+    txt.delete("all")
+    clearTxt()
+    unlock()
+
+def regen():
+    global stats, txt
+    stats["HP"] = stats["maxHP"]
+    stats["MP"] = stats["maxMP"]
+    clearTxt()
+    txt.delete("all")
+    message("Vous vous sentez fais et dispo !", regenToGame)
+
+def regenMenu():
+    global menu,txt
+    clearTxt()
+    txt.create_text(10,10,anchor = NW, text = "Veux-tu te reposer pour 100 PO ?")
+    yes = Button(txt, text="OUI", command = regen)
+    no = Button(txt, text = "NON", command = regenToGame)
+    yes.place(x = 100, y = 50,width = 40, height = 40)
+    no.place(x = 150, y = 50,width = 40, height = 40)
 
 def createMap(f):
-  global width, height, blocks, pnjs, x, y, xOffset, yOffset, mapName
+  global width, height, blocks, pnjs, x, y, xOffset, yOffset, mapName, direction, images
   line = f.readline().rstrip("\n")
   mapName = f.readline().rstrip("\n")
   fbg = f.readline().rstrip("\n")
@@ -669,6 +719,8 @@ def createMap(f):
   height = int(f.readline().rstrip("\n"))
   x = int(f.readline().rstrip("\n"))
   y = int(f.readline().rstrip("\n"))
+  direction = f.readline().rstrip("\n")
+  images["player"] = images[direction]
   xOffset = x - 4
   yOffset = y - 4
   a = 1
@@ -708,9 +760,27 @@ def createTrigger(f):
   global triggers, width
   line = f.readline().rstrip("\n")
   name = f.readline().rstrip("\n")
-  x = int(f.readline().rstrip("\n"))
-  y = int(f.readline().rstrip("\n"))
-  triggers[x + y * width].append(name)
+  x = f.readline().rstrip("\n")
+  y = f.readline().rstrip("\n")
+
+  try :
+      x = int(x)
+      y = int(y)
+      triggers[x + y * width].append(name)
+
+  except Exception :
+      i = x.find("-")
+      startX = int(x[:i])
+      endX = int(x[i + 1:])
+
+      i = y.find("-")
+      startY = int(y[:i])
+      endY = int(y[i + 1:])
+
+      for a in range(startX, endX + 1):
+          for b in range(startY, endY + 1):
+              triggers[a + b * width].append(name)
+
   line = f.readline().rstrip("\n")
 
 def loadItem(f):
