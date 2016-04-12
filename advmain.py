@@ -997,7 +997,7 @@ f.close()
 if os.path.exists("test.save"):
     load()
 else:
-    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
+    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "gold" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
     f = open('level1.level','r')
     loadResources(f)
     f.close()
