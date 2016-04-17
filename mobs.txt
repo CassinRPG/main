@@ -43,3 +43,24 @@ VOID
 Bave de Slime
 }
 }
+[ENEMY]
+{
+Orc
+orc_1.png
+proba:8
+lvl:10
+maxHP:75
+HP:75
+strength:14
+wisdom:2
+dexterity:7
+armor:7
+[SKILLS]
+{
+strike
+}
+[LOOT]
+{
+VOID
+}
+}
