@@ -57,7 +57,7 @@ dexterity:7
 armor:7
 [SKILLS]
 {
-strike
+Punch
 }
 [LOOT]
 {
