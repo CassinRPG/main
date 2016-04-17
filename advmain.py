@@ -5,37 +5,47 @@ import random
 import pickle
 import os.path
 
-#Initialisation des variables globales.
+#Initialisation des variables
+
+#Taille de la map
 width = 0
 height = 0
 mapName = ""
 
+#Code des touches
 LEFT = 37
 UP = 38
 RIGHT = 39
 DOWN = 40
 ENTER = 13
 
+#Taille des images
 IMAGE_SIZE = 64
 
+#Nombre de blocs à l'écran
 blocksWidth = 9
 blocksHeight = 9
 
+#Tableaux représentant la carte
 blocks = []
 pnjs = []
 triggers = {}
 
+#Offset caméra
 xOffset = 0
 yOffset = 0
 
+#Coordonnées du joueur
 x = 3
 y = 3
 
+#direction du joueur
 direction = "Up"
+
+#Variable permettant de lock
 l = [False]
 
-#DÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©claration des blocs sous forme de constantes.
-
+#Déclaration des blocs sous forme de constantes.
 VOID_BLOCK = 0
 GRASS = 1
 DIRT = 2
@@ -73,35 +83,40 @@ PILLOW = 33
 SHELF_SMALL = 34
 FLOWER = 35
 
+#Tableaux décrivant les emplacements/caractéristiques
 slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
 blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg"}
-#Dictionnaire de soliditÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© des blocs
+#Dictionnaire de solidité des blocs
 solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True }
 
-#Dictionnaire des ennemis - ChargÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© depuis les fichiers
+#Dictionnaire des ennemis - Chargé depuis les fichiers
 enemyIndex = {}
 
-#Dictionnaire des objets - ChargÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© depuis les fichiers
+#Dictionnaire des objets - Chargé depuis les fichiers
 itemIndex = {}
 
-#Dictionnaire reprÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sentant les caractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques de l'ennemi que l'on combat
+#Dictionnaire repréristiques de l'ennemi que l'on combat
 estats = {}
 
-#Dictionnaire reprÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sentant les caractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques du joueur - CaractÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ristiques de base.
+#Dictionnaire représentant les caractéristiques du joueur - Caractéristiques de base.
 stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
 
-#Variable globale utilisÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©e en combat
+#Variable globale utilisée en combat
 myTurn = False
 
-#Dictionnaire associant une image ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  un nom
+#Dictionnaire associant une image à un nom
 images = {}
 
-#Dictionnaire contenant les dialogues des diffÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©rents pnjs
+#Dictionnaire contenant les dialogues des différents pnjs
 dialogs = {}
 
+#Tableaux contenant les objets disponibles en boutique
+shopItems = []
+
+#Variable indiquant la dernière fois qu'un mouvement a été effectué par le joueur
 lastMove = 0
 
 def playMusic(path):
@@ -110,27 +125,33 @@ def playMusic(path):
 def nothing():
     pass
 
+#Fonction de calcul pour le passage d'un niveau à un autre
 def calcXP(lvl):
     return int( (900 / 99) * lvl * lvl + (9000 / 99) * lvl )
 
+#Fonction permettant de verrouiller
 def lock():
     global l
     l[0] = False
 
+#Fonction permettant de déverrouiller
 def unlock():
     global l
     l[0] = True
 
+#Fonction permettant de tester si le joueur est verrouillé ou non
 def isLocked():
     global l
     return l[0]
 
+#Fonction appelée quand on appuie sur le bouton OK
 def okMessage(callback):
     global txt, okButton
     txt.delete("all")
     okButton.destroy()
-    callback()
+    callback() #On appelle la fonction passée en paramètre
 
+#Fonction permettant d'afficher un message, et d'appeler une autre fonction quand on appuie sur OK
 def message(string, callback):
     global txt, okButton
     txt.delete("all")
@@ -138,6 +159,7 @@ def message(string, callback):
     okButton = Button(txt, text = "OK", command = lambda : okMessage(callback))
     okButton.place(x = 30, y = 50)
 
+#Fonction mettant à jour les infos de combat
 def updateFightScreen():
     global stats, estats, main, hishp, myhp, mymp
 
@@ -156,6 +178,7 @@ def updateFightScreen():
     main.update()
 
 
+#Fonction pour faire des dégâts à l'ennemi
 def dealDamage(amount):
     global stats, estats, main, menu, hishp
     amount -= estats["armor"]
@@ -165,6 +188,7 @@ def dealDamage(amount):
     a = main.create_text(64, 64, text = str(int(amount)) + " !", tag="to_delete")
     updateFightScreen()
 
+#Fonction pour recevoir des dégâts
 def takeDamage(amount):
     global stats, estats, main, txt, myhp
     amount -= stats["armor"]
@@ -177,6 +201,8 @@ def takeDamage(amount):
         print("Game OVER!") #TODO
         exit()
 
+#TODO améliorer ça... Complètement fumé avec trop de différence
+#Fonction testant l'esquive d'une attaque
 def dodgeTest():
     global stats, estats, myTurn, main
     if myTurn:
@@ -194,6 +220,7 @@ def dodgeTest():
             main.update()
             return False
 
+#Fonction permettant d'alterner entre le tour de l'ennemi et du joueur
 def changeTurn():
     global myTurn, menu, turnCounter
     turnCounter += 1
@@ -204,6 +231,7 @@ def changeTurn():
         myTurn = True
         displaySkills()
 
+#Fonction permettant de détruire tous les widgets du canvas txt
 def clearTxt():
     global txt
     temp = []
@@ -213,6 +241,7 @@ def clearTxt():
         child.destroy()
         txt.update()
 
+#Fonction permettant de détruire tous les widgets du canvas menu
 def clearMenu():
     global menu
     temp = []
@@ -222,6 +251,7 @@ def clearMenu():
         child.destroy()
         menu.update()
 
+#Fonction permettant de détruire tous les widgets du canvas main
 def clearMain():
     global main
     temp = []
@@ -231,6 +261,7 @@ def clearMain():
         child.destroy()
         main.update()
 
+#Fonction permettant de faire attaquer l'ennemi
 def enemyAttack():
     global menu, estats, stats, skills, txt
     chosenSkill = random.choice(estats["skills"])
@@ -241,6 +272,7 @@ def enemyAttack():
     main.delete("to_delete")
     changeTurn()
 
+#Fonction de test de changement de niveau
 def testLevelUp():
     global stats
     if stats["XP"] >= calcXP(stats["LVL"]):
@@ -251,6 +283,7 @@ def testLevelUp():
     else:
         unlock()
 
+#Fonction de gain d'expérience
 def xp():
     global stats, estats, turnCounter
     bonusMultiplier = 1
@@ -262,6 +295,7 @@ def xp():
     stats["XP"] += gain
     message("Vous gagnez : " + str(gain) + " XP !", testLevelUp)
 
+#Fonction de test de gain d'objet à la fin du combat
 def testLoot():
     global stats, estats
     pick = random.choice(estats["loot"])
@@ -271,6 +305,7 @@ def testLoot():
     else:
         xp()
 
+#Fonction permettant d'utiliser un sort
 def doSkill(skill):
     global stats, estats, skills, menu, txt, main
     txt.delete("all")
@@ -285,7 +320,6 @@ def doSkill(skill):
         clearMain()
         showMenu()
         draw(xOffset,yOffset)
-
     else:
         changeTurn()
 
@@ -334,15 +368,19 @@ def clawing():
         if dodgeTest():
             takeDamage(0.2 * estats["strength"])
 
+#Dictionnaire des sorts
 skills = {"strike" : strike, "Blub" : blub, "Slurp": slurp, "Bite" : bite, "Clawing" : clawing}
 
+#Dictionnaire de description des sorts
 skillsDesc = {"strike" : {"MP" : "0" , "desc" : "Un coup de base."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}}
 
+#Fonction permettant le passage du menu titre au jeu
 def titleToGame():
     global c
     c.destroy()
     unlock()
 
+#Fonction d'affichage de la description d'un sort
 def displayDesc(skill):
     global txt, skillsDesc
     txt.delete('all')
@@ -350,6 +388,7 @@ def displayDesc(skill):
     txt.create_text(5, 20, text = skillsDesc[skill]["MP"] + " MP", anchor = NW)
     txt.create_text(5, 35, text = skillsDesc[skill]["desc"], anchor = NW)
 
+#Foonction d'affichage des sorts disponibles
 def displaySkills(offset = 0):
     global menu, txt, upb, downb, stats, estats, skills
     clearMenu()
@@ -381,6 +420,7 @@ def displaySkills(offset = 0):
             b.bind("<Leave>", lambda e , i = i: txt.delete("all"))
             yo += 64 + 10
 
+#Fonction de chargement d'une sauvegarde avec pickle
 def load():
     global stats, x ,y, xOffset, yOffset, mapName, direction, images
 
@@ -405,6 +445,7 @@ def load():
 
     f.close()
 
+#Fonction permettant de sauvegarder avec pickle
 def save():
     global x, y, stats, mapName, direction
 
@@ -422,6 +463,7 @@ def save():
 
     unlock()
 
+#Fonction permettant de retourner au jeu
 def back():
     global txt
     txt.delete("all")
@@ -429,6 +471,7 @@ def back():
     showMenu()
     unlock()
 
+#Fonction permettant d'attribuer un point dans une catégorie
 def attribPoint(stat):
     global stats
     stats["lvlPoints"] -= 1
@@ -437,6 +480,7 @@ def attribPoint(stat):
     clearTxt()
     displayChar()
 
+#Fonction pour afficher des infos à propos de l'état du joueur
 def displayChar():
     global txt, stats
 
@@ -462,9 +506,10 @@ def displayChar():
     txt.create_text(15, 55, text = "Wisdom : " + str(stats["wisdom"]), anchor = NW)
     txt.create_text(15, 75, text = "Dexterity : " + str(stats["dexterity"]), anchor = NW)
     txt.create_text(15, 95, text = "Armor : " + str(stats["armor"]), anchor = NW)
+    txt.create_text(15, 115, text = "Gold : " + str(stats["gold"]), anchor = NW)
 
     if stats["lvlPoints"] != 0:
-        txt.create_text(150, 15, text = "Points ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©penser : " + str(stats["lvlPoints"]), anchor = NW)
+        txt.create_text(150, 15, text = "Points à dépenser : " + str(stats["lvlPoints"]), anchor = NW)
         b = Button(txt, text = "+ Strength", command = lambda i = "strength" : attribPoint(i))
         b.place(x = 150, y = 35, height = 20, width = 64)
         b = Button(txt, text = "+ Widsom", command = lambda i = "wisdom" : attribPoint(i))
@@ -492,14 +537,16 @@ def displayChar():
     b = Button(txt, text = "Retour", command = back)
     b.place(x = 550, y = 60, width = 108, height = 64)
 
-def inventoryEquip(item): # Fonction pour ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quiper un objet  depuis l'inventaire
+#Fonction pour équiper un objet  depuis l'inventaire
+def inventoryEquip(item): 
     global stats, itemIndex
-    if stats["items"][itemIndex[item]["slot"]] != "VOID": #Si on a dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©jÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  un objet ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© dans cet emplacement, on le dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©sÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipe
+    if stats["items"][itemIndex[item]["slot"]] != "VOID":
         unequip(stats["items"][itemIndex[item]["slot"]])
-    equip(item) # On ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©quipe l'objet
-    clearTxt() # On efface la zone de texte
-    displayInventory() #Et on rÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©affiche l'inventaire
+    equip(item)
+    clearTxt()
+    displayInventory()
 
+#Fonction permettant de sortir du menu de l'inventaire
 def invToMenu():
     global txt
     txt.delete("all")
@@ -507,23 +554,26 @@ def invToMenu():
     clearMenu()
     showMenu()
 
+#Fonction appelée quand on choisit un objet dans l'inventaire
 def pickItem(item):
     global itemIndex, slots, txt, caracs
-    yo = 10
+    yo = 25
     if itemIndex[item]["slot"] in slots:
         b = Button(txt, text = "EQUIP", command = lambda i = item : inventoryEquip(i))
-        b.place(x = 350, y = 10, width = 108, height = 64)
+        b.place(x = 500, y = 50, width = 108, height = 64)
         for a in itemIndex[item]:
             if a in caracs:
-                txt.create_text(200, yo, text = a + " : " + str(itemIndex[item][a]), anchor = NW)
+                txt.create_text(10, yo, text = a + " : " + str(itemIndex[item][a]), anchor = NW)
                 yo += 15
+    txt.create_text(10, 115,anchor = NW, text = "Price : " + str(itemIndex[item]["price"]))
     yo = 10
     for t in itemIndex[item]["desc"]:
-        txt.create_text(10, yo, text = t, anchor = NW)
+        txt.create_text(90, yo, text = t, anchor = NW)
         yo += 15
 
+#Fonction permettant d'afficher l'inventaire
 def displayInventory(offset = 0):
-    global txtt, menu, stats
+    global txt, menu, stats
     clearMenu()
     txt.delete("all")
     if len(stats["inventory"]) == 0:
@@ -552,6 +602,7 @@ def displayInventory(offset = 0):
     b = Button(menu, text = "RETURN", command = invToMenu)
     b.place(x = 10, y = 10 + 6 * 74, width = 108, height = 64)
 
+#Fonction permettant de déséquiper un objet
 def equipmentUnequip(item):
     global stats, itemIndex, txt
     stats["items"][itemIndex[item]["slot"]] = "VOID"
@@ -561,20 +612,22 @@ def equipmentUnequip(item):
     clearTxt()
     displayEquipment()
 
+#Fonction appelée quand on choisit un objet équipé
 def pickEquipment(item):
     global itemIndex, stats
     yo = 10
     b = Button(txt, text = "UNEQUIP", command = lambda i = item : equipmentUnequip(i))
-    b.place(x = 350, y = 10, width = 108, height = 64)
+    b.place(x = 570, y = 60, width = 108, height = 64)
     for a in itemIndex[item]:
         if a in caracs:
-            txt.create_text(200, yo, text = a + " : " + str(itemIndex[item][a]), anchor = NW)
+            txt.create_text(10, yo, text = a + " : " + str(itemIndex[item][a]), anchor = NW)
             yo += 15
     yo = 10
     for t in itemIndex[item]["desc"]:
-        txt.create_text(10, yo, text = t, anchor = NW)
+        txt.create_text(90, yo, text = t, anchor = NW)
         yo += 15
 
+#Fonction permettant d'afficher l'équipement
 def displayEquipment():
     global stats, menu
     clearMenu()
@@ -584,12 +637,13 @@ def displayEquipment():
             b = Button(menu, text = slot + " :\nVIDE")
             b.place(x = 10, y = yo, width = 108, height = 64)
         else:
-            b = Button(menu, text = slot + "\n" + stats["items"][slot], command = lambda i = stats["items"][slot] : pickEquipment(i) )
+            b = Button(menu, text = slot + ":\n" + stats["items"][slot], command = lambda i = stats["items"][slot] : pickEquipment(i) )
             b.place(x = 10, y = yo, width = 108, height = 64)
         yo += 74
     q = Button(menu, text = "RETURN", command = invToMenu)
     q.place(x = 10, y = 306, width = 108, height = 64)
 
+#Fonction permettant d'afficher le menu global
 def showMenu():
     global menu
     c = Button(menu, text = "Perso", command = displayChar)
@@ -601,6 +655,7 @@ def showMenu():
     e = Button(menu, text = "Equipement", command = displayEquipment)
     e.place(x = 10, y = 232, width = 108, height = 64)
 
+#Fonction permettant d'afficher l'écran de combat
 def fightScreen(name):
     global main, images, myTurn, myhp, mymp, hishp, stats, estats
 
@@ -642,6 +697,7 @@ def fightScreen(name):
         myTurn = False
         message(name + " commence !", enemyAttack)
 
+#Fonction permettant de lancer un combat
 def fight(name):
     global main, txt, estats, menu, stats, turnCounter
     lock()
@@ -652,6 +708,7 @@ def fight(name):
          estats[key] = enemyIndex[name][key]
     message("Combat contre un : " + name, lambda : fightScreen(name))
 
+#Fonction permettant de lancer un dialogue avec un pnj
 def pnjDialog(canvas, name):
     global dialogs
     if len(dialogs[name]) != 0:
@@ -659,12 +716,14 @@ def pnjDialog(canvas, name):
     else:
         unlock()
 
+#Fonction permetttant d'intéragir avec des blocs
 def blockAction(block):
   global stats
   if block == VOID_BLOCK:
     playMusic('test.wav')
     message("LE CHAMPOMY C'EST POUR LES FAIBLES !", unlock)
 
+#Fonction permettant de déclencher des triggers
 def triggerAction(x , y, name):
   global width, blocks, pnjs, triggers, main, dialogs, enemyIndex
   if name.startswith("FIGHT:"):
@@ -685,13 +744,153 @@ def triggerAction(x , y, name):
   elif name.startswith("REGEN"):
     lock()
     message("Voyageur, bouffe AGNAGNAGN", regenMenu)
+  elif name.startswith("SHOP:"):
+    lock()
+    clearMenu()
+    shop(name[len("SHOP:"):])
 
+#Fonction permettant de vendre des objets
+def sell():
+    global txt, menu, stats
+    clearMenu()
+    clearTxt()
+    txt.delete("all")
+    if len(stats["inventory"]) == 0:
+        showMenu()
+        unlock()
+        return
+    elif len(stats["inventory"]) < 5:
+        yo = 84
+        for item in stats["inventory"].keys():
+            b = Button(menu, text = item + " x " + str(stats["inventory"][item]), command = lambda i = item : sellItem(i))
+            b.bind("<Enter>", lambda e, i = item: itemDesc(i))
+            b.place(x = 10, y = yo, height = 64, width = 108)
+            yo += 74
+    else:
+        if offset + 4 > len(stats["inventory"]):
+            offset -= 1
+        elif offset < 0:
+            offset = 0
+        up = Button(menu, text = "UP", command = lambda o = offset - 1 : displayInventory(offset = o))
+        up.place(x = 10, y = 10, height = 64, width = 108)
+        down = Button(menu, text = "DOWN", command = lambda o = offset + 1 : displayInventory(offset = o))
+        down.place(x = 10, y = 10 + 5 * 74, height = 64, width = 108)
+        yo = 84
+        for i in range(offset, offset + 4):
+            b = Button(menu, text = list(stats["inventory"].keys())[i] + "x" + str(stats["inventory"][list(stats["inventory"].keys())[i]]), command = lambda i = list(stats["inventory"].keys())[i] : sellItem(i))
+            b.bind("<Enter>", lambda e, i = item: itemDesc(i))
+            b.place(x = 10, y = yo, width = 108, height = 64)
+            yo += 74
+    b = Button(menu, text = "RETURN", command = shopToMenu)
+    b.place(x = 10, y = 10 + 6 * 74, width = 108, height = 64)
+
+#Fonction d'affichage du menu de la boutique
+def shop(shopFile):
+    global txt, shopItems
+    shopItems = []
+    f = open(shopFile, 'r')
+    for line in f:
+        shopItems.append(line.rstrip("\n"))
+    f.close()
+    
+    txt.create_text(10,10,anchor = NW, text = "La boutique. Vous pouvez acheter ou vendre des objets.")
+
+    b = Button(txt, text = "ACHETER", command = buy)
+    s = Button(txt, text = "VENDRE", command = sell)
+    q = Button(txt, text = "RETURN", command = shopToMenu)
+    b.place(x = 100, y = 50, width = 64, height = 64)
+    s.place(x = 200, y = 50, width = 64, height = 64)
+    q.place(x = 300, y = 50, width = 64, height = 64)
+
+#Fonction permettant de passer de la boutique au menu global
+def shopToMenu():
+    global txt
+    clearMenu()
+    clearTxt()
+    txt.delete("all")
+    showMenu()
+    unlock()
+
+#Fonction permettant de vendre des objets
+def sellItem(item):
+    global stats, txt, itemIndex
+    txt.delete("all")
+    clearTxt()
+    clearMenu()
+    stats["gold"] += itemIndex[item]["price"]
+    inventoryRemove(item)
+    message("VENTE : " + item + " pour " + str(itemIndex[item]["price"]), sell)
+
+#Fonction permettant d'acheter des objets
+def buyItem(item):
+    global stats, itemIndex, txt
+    if stats["gold"] >= itemIndex[item]["price"]:
+        stats["gold"] -= itemIndex[item]["price"]
+        inventoryAdd(item)
+        txt.delete("all")
+        clearTxt()
+        clearMenu()
+        message("ACHAT : " + item, shopToMenu)
+    else:
+        return
+
+#Fonction d'affichage du menu d'achat
+def buy(offset = 0):
+    global txt, shopItems, stats, itemIndex, skills
+    clearMenu()
+    clearTxt()
+    txt.delete("all")
+    if len(shopItems) < 5:
+        yo = 84
+        for item in shopItems:
+            b = Button(menu, text = item + " : " + str(itemIndex[item]["price"]), command = lambda i = item : buyItem(i))
+            b.bind("<Enter>", lambda e, i = item: itemDesc(i))
+            b.place(x = 10, y = yo, height = 64, width = 108)
+            yo += 74
+    else:
+        if offset + 4 > len(shopItems):
+            offset -= 1
+        elif offset < 0:
+            offset = 0
+        up = Button(menu, text = "UP", command = lambda o = offset - 1 : buy(offset = o))
+        up.place(x = 10, y = 10, height = 64, width = 108)
+        down = Button(menu, text = "DOWN", command = lambda o = offset + 1 : buy(offset = o))
+        down.place(x = 10, y = 10 + 5 * 74, height = 64, width = 108)
+        yo = 84
+        for i in range(offset, offset + 4):
+            b = Button(menu, text = shopItems[i] + " : " + str(itemIndex[shopItems[i]]["price"]), command = lambda i = shopItems[i] : buyItem(i))
+            b.bind("<Enter>", lambda e, i = i: itemDesc(shopItems[i]))
+            b.place(x = 10, y = yo, width = 108, height = 64)
+            yo += 74
+    b = Button(menu, text = "RETURN", command = shopToMenu)
+    b.place(x = 10, y = 10 + 6 * 74, width = 108, height = 64)
+
+#Fonction d'affichage de la description d'un objet
+def itemDesc(item):
+    global itemIndex, txt
+    txt.delete("all")
+    txt.create_text(15, 115, text = "Prix :" + str(itemIndex[item]["price"]), anchor = NW)
+    yOffset = 10
+    for line in itemIndex[item]["desc"]:
+        txt.create_text(100, yOffset, anchor = NW, text=line)
+        yOffset += 20
+    if "strength" in itemIndex[item].keys():
+        txt.create_text(15, 30, text = "Strength : " + str(itemIndex[item]["strength"]), anchor = NW)
+    if "wisdom" in itemIndex[item].keys():
+        txt.create_text(15, 50, text = "Wisdom : " + str(itemIndex[item]["widsom"]), anchor = NW)
+    if "dexterity" in itemIndex[item].keys():
+        txt.create_text(15, 70, text = "Dexterity : " + str(itemIndex[item]["dexterity"]), anchor = NW)
+    if "armor" in itemIndex[item].keys():
+        txt.create_text(15, 90, text = "Armor : " + str(itemIndex[item]["armor"]), anchor = NW)
+
+#Fonction permettant de passer du menu de l'auberge au menu global
 def regenToGame():
     global txt
     txt.delete("all")
     clearTxt()
     unlock()
 
+#Fonction permettant de récupérer ses HP/MP
 def regen():
     global stats, txt
     stats["HP"] = stats["maxHP"]
@@ -700,6 +899,7 @@ def regen():
     txt.delete("all")
     message("Vous vous sentez fais et dispo !", regenToGame)
 
+#Fonction d'affichage du menu de l'auberge
 def regenMenu():
     global menu,txt
     clearTxt()
@@ -709,6 +909,7 @@ def regenMenu():
     yes.place(x = 100, y = 50,width = 40, height = 40)
     no.place(x = 150, y = 50,width = 40, height = 40)
 
+#Fonction de chargement de la carte
 def createMap(f):
   global width, height, blocks, pnjs, x, y, xOffset, yOffset, mapName, direction, images
   line = f.readline().rstrip("\n")
@@ -741,6 +942,7 @@ def createMap(f):
     pnjs.append(-1)
     triggers[temp] = []
 
+#Fonction de chargement des pnjs
 def createPNJ(f):
   global pnjs, width, images, dialogs
   line = f.readline().rstrip("\n")
@@ -756,6 +958,7 @@ def createPNJ(f):
   file.close()
   line = f.readline().rstrip("\n")
 
+#Fonction de chargement des triggers
 def createTrigger(f):
   global triggers, width
   line = f.readline().rstrip("\n")
@@ -783,6 +986,7 @@ def createTrigger(f):
 
   line = f.readline().rstrip("\n")
 
+#Fonction permettant de charger des objets
 def loadItem(f):
     global itemIndex
     line = f.readline().rstrip("\n")
@@ -802,6 +1006,7 @@ def loadItem(f):
         itemIndex[name]["desc"].append(line)
         line = f.readline().rstrip("\n")
 
+#Fonction de chargement des ennemis
 def loadEnemy(f):
     global enemyIndex, images
     line = f.readline().rstrip("\n") # {
@@ -831,6 +1036,7 @@ def loadEnemy(f):
         line = f.readline().rstrip("\n")
     line = f.readline().rstrip("\n") # }
 
+#Fonction de chargement globale
 def loadResources(f):
   global blocks, blockIndex, images
   line = f.readline().rstrip("\n")
@@ -849,6 +1055,7 @@ def loadResources(f):
   for block in blocks:
     images[block] = loadImage(blockIndex[block])
 
+#Fonction d'ajout d'un objet à l'inventaire du joueur
 def inventoryAdd(name):
     global stats
     if name in stats["inventory"].keys():
@@ -856,12 +1063,14 @@ def inventoryAdd(name):
     else:
         stats["inventory"][name] = 1
 
+#Fonction de retrait d'un objet de l'inventaire
 def inventoryRemove(name):
     global stats
     stats["inventory"][name] -= 1
     if stats["inventory"][name] == 0:
         stats["inventory"].pop(name, None)
 
+#Fonction de vérification
 def check():
     global stats
     if stats["HP"] > stats["maxHP"]:
@@ -869,6 +1078,7 @@ def check():
     if stats["MP"] > stats["maxMP"]:
         stats["MP"] = stats["maxMP"]
 
+#Fonction permettant d'équiper un objet de l'inventaire
 def equip(name):
     global stats, itemIndex, caracs, slots
     if itemIndex[name]["slot"] in slots:
@@ -880,6 +1090,7 @@ def equip(name):
                     stats[key] += itemIndex[name][key]
             check()
 
+#Fonction permettant de déséquiper un objet
 def unequip(name):
     global stats, itemIndex, caracs
     if name in stats["items"].values():
@@ -890,7 +1101,7 @@ def unequip(name):
                 stats[key] -= itemIndex[name][key]
         check()
 
-
+#Fonction traitant les entrées clavier
 def keyListener(event):
   global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt, lastMove
   if isLocked() == True:
@@ -938,6 +1149,7 @@ def keyListener(event):
           blockAction(blocks[x + vx + ( y + vy ) * width])
     draw(xOffset,yOffset)
 
+#Début du programme principal
 createWindow(keyListener)
 
 images["Background"] = loadImage("background.png")
@@ -955,6 +1167,7 @@ showMenu()
 
 c = titleMenu(titleToGame, images["Background"])
 
+#Fonction de dessin de la map, du joueur, et de tout le reste
 def draw(xOffset, yOffset):
   global width, height, main, x, y, pnjs, images, blocks, IMAGE_SIZE, blocksWidth, blocksHeight
 
