@@ -33,3 +33,4 @@
 032 = Table 4
 033 = Coussin
 034 = étagère petite
+400 = Coffre à trésors
