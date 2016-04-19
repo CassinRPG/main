@@ -64,3 +64,27 @@ Punch
 VOID
 }
 }
+[ENEMY]
+{
+Bandit
+Bandit_1.jpg
+proba:4
+lvl:15
+maxHP:100
+HP:100
+strength:9
+wisdom:12
+dexterity:15
+armor:9
+[SKILLS]
+{
+Punch
+Lancer de couteau
+}
+[LOOT]
+{
+Vieille relique
+Dagues
+VOID
+}
+}
