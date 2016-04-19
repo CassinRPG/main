@@ -83,14 +83,17 @@ PILLOW = 33
 SHELF_SMALL = 34
 FLOWER = 35
 
+CHEST = 400
+OPEN_CHEST = 401
+
 #Tableaux décrivant les emplacements/caractéristiques
 slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
-blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg"}
+blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", OPEN_CHEST : "OPEN_CHEST.png"}
 #Dictionnaire de solidité des blocs
-solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True }
+solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True, CHEST : True, OPEN_CHEST : True}
 
 #Dictionnaire des ennemis - Chargé depuis les fichiers
 enemyIndex = {}
@@ -102,7 +105,7 @@ itemIndex = {}
 estats = {}
 
 #Dictionnaire représentant les caractéristiques du joueur - Caractéristiques de base.
-stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
+stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["Punch"]}
 
 #Variable globale utilisée en combat
 myTurn = False
@@ -115,6 +118,9 @@ dialogs = {}
 
 #Tableaux contenant les objets disponibles en boutique
 shopItems = []
+
+#Dictionnaire contenant les objets découverts dans les coffres.
+chests = {}
 
 #Variable indiquant la dernière fois qu'un mouvement a été effectué par le joueur
 lastMove = 0
@@ -278,6 +284,10 @@ def testLevelUp():
     if stats["XP"] >= calcXP(stats["LVL"]):
         stats["XP"] -= calcXP(stats["LVL"])
         stats["LVL"] += 1
+        stats["maxHP"] += 10
+        stats["HP"] = stats["maxHP"]
+        stats["maxMP"] += 10
+        stats["MP"] = stats["maxMP"]
         stats["lvlPoints"] += 1
         message("LEVEL UP ! Niveau atteint : " + str(stats["LVL"]), testLevelUp)
     else:
@@ -354,25 +364,34 @@ def bite():
     global myTurn, stats, estats
     if myTurn:
         if dodgeTest():
-            dealDamage(stats["strength"])
+            dealDamage(0.6 * stats["strength"] + 2)
     else:
         if dodgeTest():
-            takeDamage(0.2 * estats["strength"])
+            takeDamage(0.6 * estats["strength"] + 2)
 
 def clawing():
     global myTurn, stats, estats
     if myTurn:
         if dodgeTest():
-            dealDamage(stats["strength"])
+            dealDamage(0.4 * stats["strength"] + 0.6 * stats["dexterity"])
     else:
         if dodgeTest():
-            takeDamage(0.2 * estats["strength"])
+            takeDamage(0.4 * estats["strength"] + 0.6 * estats["dexterity"])
+
+def knife_throw():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(1.2 * stats["dexterity"])
+    else:
+        if dodgeTest():
+            takeDamage(1.2 * estats["dexterity"])
 
 #Dictionnaire des sorts
-skills = {"strike" : strike, "Blub" : blub, "Slurp": slurp, "Bite" : bite, "Clawing" : clawing}
+skills = {"Punch" : strike, "Blub" : blub, "Slurp": slurp, "Morsure" : bite, "Griffure" : clawing, "Lancer de couteau" : knife_throw}
 
 #Dictionnaire de description des sorts
-skillsDesc = {"strike" : {"MP" : "0" , "desc" : "Un coup de base."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}}
+skillsDesc = {"Punch" : {"MP" : "0" , "desc" : "Un coup de poing basique."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}, "Morsure" : {"MP" : "0", "desc":"Une simple morsure."}, "Lancer de couteau" : {"MP" : "0", "desc" : "Tout est dans le nom."}}
 
 #Fonction permettant le passage du menu titre au jeu
 def titleToGame():
@@ -557,6 +576,8 @@ def invToMenu():
 #Fonction appelée quand on choisit un objet dans l'inventaire
 def pickItem(item):
     global itemIndex, slots, txt, caracs
+    txt.delete("all")
+    clearTxt()
     yo = 25
     if itemIndex[item]["slot"] in slots:
         b = Button(txt, text = "EQUIP", command = lambda i = item : inventoryEquip(i))
@@ -680,11 +701,11 @@ def fightScreen(name):
     main.create_image(0,0, anchor = NW, image = images[name])
     main.create_image(384, 0, anchor = NW, image = images["fight_image"])
 
-    a = main.create_text(10, 220, text = "HP : " + str(estats["HP"]) + " / " + str(estats["maxHP"]), anchor = NW)
+    a = main.create_text(10, 220, text = "HP : " + str(estats["HP"]) + " / " + str(estats["maxHP"]), anchor = NW, fill = "red")
 
-    b = main.create_text(394, 260, text = "MP : " + str(stats["MP"]) + " / " + str(stats["maxMP"]), anchor = NW)
+    b = main.create_text(394, 260, text = "MP : " + str(stats["MP"]) + " / " + str(stats["maxMP"]), anchor = NW, fill = "blue")
 
-    c = main.create_text(394, 220, text = "HP : " + str(stats["HP"]) + " / " + str(stats["maxHP"]), anchor = NW)
+    c = main.create_text(394, 220, text = "HP : " + str(stats["HP"]) + " / " + str(stats["maxHP"]), anchor = NW, fill = "red")
 
     main.setvar(name = "ehp", value = a)
     main.setvar(name = "mp", value = b)
@@ -716,16 +737,52 @@ def pnjDialog(canvas, name):
     else:
         unlock()
 
+def openChest(coords, i):
+    global chests, mapName, blocks, width, xOffset, yOffset
+    txt.delete("all")
+    clearTxt()
+    if i < len(chests[coords]):
+        item = chests[coords][i]
+        inventoryAdd(item)
+        message("Vous trouvez : " + item, lambda c = coords, i = i : openChest(c, i + 1))
+    else:
+        f = open(mapName + ".level", "r+")
+        a = 0
+        for i in range(9 + coords[1]):
+            temp = f.readline()
+            a += len(temp)
+        f.seek(a + 3 * coords[0] + 9 + coords[1], 0) #Comportement étrange...
+        f.write(str(OPEN_CHEST))
+        f.close()
+        blocks[coords[0] + coords[1] * width] = OPEN_CHEST
+        draw(xOffset, yOffset)
+        showMenu()
+        unlock()
+
 #Fonction permetttant d'intéragir avec des blocs
 def blockAction(block):
-  global stats
+  global stats, direction,x ,y
   if block == VOID_BLOCK:
-    playMusic('test.wav')
+    #playMusic('test.wav')
     message("LE CHAMPOMY C'EST POUR LES FAIBLES !", unlock)
+  elif block == CHEST:
+    lock()
+    clearMenu()
+    vx = 0
+    vy = 0
+    if direction == "Up":
+        vy = -1
+    elif direction == "Down":
+        vy = 1
+    elif direction == "Right":
+        vx = 1
+    elif direction == "Left":
+        vx = -1
+    openChest((x+vx,y+vy), 0)
 
 #Fonction permettant de déclencher des triggers
 def triggerAction(x , y, name):
-  global width, blocks, pnjs, triggers, main, dialogs, enemyIndex
+  global width, blocks, pnjs, triggers, main, dialogs, enemyIndex, chests
   if name.startswith("FIGHT:"):
       if random.random() <= 1 / enemyIndex[name[len("FIGHT:"):]]["proba"]:
           fight(name[len("FIGHT:"):])
@@ -735,6 +792,7 @@ def triggerAction(x , y, name):
     pnjs = []
     triggers = {}
     dialogs = {}
+    chests = {}
     main.delete('all')
     loadResources(open(name[len("LOAD:"):],'r'))
     unlock()
@@ -1036,6 +1094,17 @@ def loadEnemy(f):
         line = f.readline().rstrip("\n")
     line = f.readline().rstrip("\n") # }
 
+def loadChest(f):
+    global chests
+    line = f.readline().rstrip("\n") # {
+    x = int(f.readline().rstrip("\n")) # X
+    y = int(f.readline().rstrip("\n")) # Y
+    chests[(x,y)] = []
+    line = f.readline().rstrip("\n")
+    while line != "}":
+        chests[(x,y)].append(line)
+        line = f.readline().rstrip("\n")
+
 #Fonction de chargement globale
 def loadResources(f):
   global blocks, blockIndex, images
@@ -1050,6 +1119,8 @@ def loadResources(f):
     loadEnemy(f)
   elif line == "[ITEM]":
     loadItem(f)
+  elif line == "[CHEST]":
+    loadChest(f)
   if line != '':
     loadResources(f)
   for block in blocks:
@@ -1161,6 +1232,8 @@ images["Right"] = loadImage("right.png")
 
 images["fight_image"] = loadImage("gentil.png")
 
+images[OPEN_CHEST] = loadImage("OPEN_CHEST.png")
+
 main, txt, menu = gameCanvas()
 
 showMenu()
@@ -1210,7 +1283,7 @@ f.close()
 if os.path.exists("test.save"):
     load()
 else:
-    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "gold" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["strike"]}
+    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "gold" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["Punch"]}
     f = open('level1.level','r')
     loadResources(f)
     f.close()
