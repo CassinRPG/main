@@ -194,9 +194,33 @@ Les haches en fer d'Hymlia, forgées selon la légende par le peuple nain, sont 
 {
 Bave de Slime
 slot:none
-price:50
+price:10
 [DESC]
 {
 Juste de la bave de slime bien collante.
+}
+}
+[ITEM]
+{
+Dagues
+slot:weapon
+dexterity:8
+wisdom:1
+price:100
+[DESC]
+{
+Des dagues très appréciées des bandits.
+Elles ne sont plus toutes neuves...
+}
+}
+[ITEM]
+{
+Vieille relique
+slot:none
+price:250
+[DESC]
+{
+Une relique d'une civilisation disparue, elle représente un diablotin grimaçant.
+Ça doit bien valoir quelque chose...
 }
 }
