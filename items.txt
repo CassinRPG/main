@@ -224,3 +224,57 @@ Une relique d'une civilisation disparue, elle représente un diablotin grimaçan
 Ça doit bien valoir quelque chose...
 }
 }
+[ITEM]
+{
+Os
+slot:none
+price:15
+[DESC]
+{
+Surement un tibia.
+}
+}
+[ITEM]
+{
+Crane
+slot:none
+price:25
+[DESC]
+{
+Un simple crane humain.
+Vous avez vu ? Il vous suit des yeux.
+Etre ou ne pas être, telle est la question ?
+}
+}
+[ITEM]
+{
+Toile d'araignée
+slot:none
+price:10
+[DESC]
+{
+Une toile d'araignée.
+}
+}
+[ITEM]
+{
+Venin d'araignée
+slot:none
+price:50
+[DESC]
+{
+Du venin d'araignée des cavernes, provoquant la paralysie.
+Très prisé par les chasseurs, qui aiment en enduire leurs armes.
+}
+}
+[ITEM]
+{
+Mithril
+slot:none
+price:300
+[DESC]
+{
+Un métal très précieux.
+Les nains savent le travailler avec une grande adresse.
+}
+}
