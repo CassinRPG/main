@@ -88,3 +88,97 @@ Dagues
 VOID
 }
 }
+[ENEMY]
+{
+Skeleton
+Skeleton_1.jpg
+proba:8
+lvl:20
+maxHP:150
+HP:150
+strength:15
+wisdom:8
+dexterity:8
+armor:0
+[SKILLS]
+{
+Punch
+Lancer d'os
+}
+[LOOT]
+{
+Os
+Crane
+VOID
+VOID
+}
+}
+[ENEMY]
+{
+Araignée des cavernes
+Spider_1.png
+proba:10
+lvl:13
+maxHP:75
+HP:75
+strength:7
+wisdom:7
+dexterity:7
+armor:5
+[SKILLS]
+{
+Morsure
+}
+[LOOT]
+{
+Toile d'araignée
+Venin d'araignée
+VOID
+}
+}
+[ENEMY]
+{
+Nain des cavernes
+Nain_1.jpg
+proba:7
+lvl:15
+maxHP:175
+HP:175
+strength:15
+wisdom:10
+dexterity:10
+armor:14
+[SKILLS]
+{
+Coup de hache
+Lancer de hache
+}
+[LOOT]
+{
+VOID
+VOID
+Mithril
+}
+}
+[ENEMY]
+{
+Rat des cavernes
+Rat_1.jpg
+proba:15
+lvl:8
+maxHP:50
+HP:50
+strength:8
+wisdom:1
+dexterity:9
+armor:1
+[SKILLS]
+{
+Morsure
+Griffure
+}
+[LOOT]
+{
+VOID
+}
+}
