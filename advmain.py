@@ -85,15 +85,26 @@ FLOWER = 35
 
 CHEST = 400
 OPEN_CHEST = 401
+ROCK_WALL = 403
+ROCK_FLOOR = 404
+ROCK_CIRCLE_NW = 405
+ROCK_CIRCLE_N = 406
+ROCK_CIRCLE_NE = 407
+ROCK_CIRCLE_W = 408
+ROCK_CIRCLE_C = 409
+ROCK_CIRCLE_E = 410
+ROCK_CIRCLE_SW = 411
+ROCK_CIRCLE_S = 412
+ROCK_CIRCLE_SE = 413
 
 #Tableaux décrivant les emplacements/caractéristiques
 slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
-blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", OPEN_CHEST : "OPEN_CHEST.png"}
+blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "TREE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", OPEN_CHEST : "OPEN_CHEST.png", ROCK_WALL : "ROCK_WALL.jpg", ROCK_FLOOR : "ROCK_FLOOR.png", ROCK_CIRCLE_NW : "CIRCLE_NW.png", ROCK_CIRCLE_N : "CIRCLE_N.png", ROCK_CIRCLE_NE : "CIRCLE_NE.png", ROCK_CIRCLE_W : "CIRCLE_W.png", ROCK_CIRCLE_C : "CIRCLE_C.png", ROCK_CIRCLE_E : "CIRCLE_E.png", ROCK_CIRCLE_SW : "CIRCLE_SW.png", ROCK_CIRCLE_S : "CIRCLE_S.png", ROCK_CIRCLE_SE : "CIRCLE_SE.png"}
 #Dictionnaire de solidité des blocs
-solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True, CHEST : True, OPEN_CHEST : True}
+solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True, CHEST : True, OPEN_CHEST : True, ROCK_WALL : True, ROCK_FLOOR : False, ROCK_CIRCLE_NW : False, ROCK_CIRCLE_N : False, ROCK_CIRCLE_NE : False, ROCK_CIRCLE_W : False, ROCK_CIRCLE_C : False, ROCK_CIRCLE_E : False, ROCK_CIRCLE_SW : False, ROCK_CIRCLE_S : False, ROCK_CIRCLE_SE : False}
 
 #Dictionnaire des ennemis - Chargé depuis les fichiers
 enemyIndex = {}
@@ -122,8 +133,11 @@ shopItems = []
 #Dictionnaire contenant les objets découverts dans les coffres.
 chests = {}
 
-#Variable indiquant la dernière fois qu'un mouvement a été effectué par le joueur
+#Variable indiquant la dernière fois qu'un mouvement a été effectué par le joueur - permet d'éviter les déplacements 'fusée'
 lastMove = 0
+
+#Variable permettant d'avoir un seul combat par case
+canFight = True
 
 def playMusic(path):
     pass
@@ -187,6 +201,7 @@ def updateFightScreen():
 #Fonction pour faire des dégâts à l'ennemi
 def dealDamage(amount):
     global stats, estats, main, menu, hishp
+    amount = int(amount)
     amount -= estats["armor"]
     if amount < 0:
         amount = 0
@@ -197,6 +212,7 @@ def dealDamage(amount):
 #Fonction pour recevoir des dégâts
 def takeDamage(amount):
     global stats, estats, main, txt, myhp
+    amount = int(amount)
     amount -= stats["armor"]
     if amount < 0:
         amount = 0
@@ -228,8 +244,32 @@ def dodgeTest():
 
 #Fonction permettant d'alterner entre le tour de l'ennemi et du joueur
 def changeTurn():
-    global myTurn, menu, turnCounter
+    global myTurn, menu, turnCounter, stats, estats
     turnCounter += 1
+
+    temp = []
+    etemp = []
+    
+    for effect in stats["effects"]:
+        effect["TTL"] -= 1
+        if effect["TTL"] == 0:
+            temp.append(effect)
+            for stat in list(effect.keys()):
+                stats[stat] -= effect[stat]
+                
+    for effect in estats["effects"]:
+        effect["TTL"] -= 1
+        if effect ["TTL"] == 0:
+            etemp.append(effect)
+            for stat in list(effect.keys()):
+                estats[stat] -= effect[stat]
+
+    for t in temp:
+        del(stats["effects"][t])
+        
+    for t in etemp:
+        del(estats["effects"][t])
+
     if myTurn:
         myTurn = False
         enemyAttack()
@@ -387,11 +427,29 @@ def knife_throw():
         if dodgeTest():
             takeDamage(1.2 * estats["dexterity"])
 
+def bone_throw():
+    global myTurn, stats, estats
+    if myTurn:
+        if dodgeTest():
+            dealDamage(1.2 * stats["dexterity"])
+    else:
+        if dodgeTest():
+            takeDamage(1.2 * estats["dexterity"])
+
+def warcry():
+    global myTurn, stats, estats
+    if myTurn:
+        if stats["MP"] >= 15:
+            stats["MP"] -= 15
+            stats["effects"]["warcry"] = {"buff" : {"strength" : stats["LVL"]}, "TTL" : 5}
+    else:
+        estats["effects"]["warcry"] = {"buff" : {"strength" : estats["lvl"]}, "TTL" : 5}
+
 #Dictionnaire des sorts
-skills = {"Punch" : strike, "Blub" : blub, "Slurp": slurp, "Morsure" : bite, "Griffure" : clawing, "Lancer de couteau" : knife_throw}
+skills = {"Punch" : strike, "Blub" : blub, "Slurp": slurp, "Morsure" : bite, "Griffure" : clawing, "Lancer de couteau" : knife_throw, "Lancer d'os" : bone_throw}
 
 #Dictionnaire de description des sorts
-skillsDesc = {"Punch" : {"MP" : "0" , "desc" : "Un coup de poing basique."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}, "Morsure" : {"MP" : "0", "desc":"Une simple morsure."}, "Lancer de couteau" : {"MP" : "0", "desc" : "Tout est dans le nom."}}
+skillsDesc = {"Punch" : {"MP" : "0" , "desc" : "Un coup de poing basique."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}, "Morsure" : {"MP" : "0", "desc":"Une simple morsure."}, "Lancer de couteau" : {"MP" : "0", "desc" : "Tout est dans le nom."}, "Lancer d'os" : {"MP" : "0", "desc" : "Etonnament, u nos lancé à grande vitesse fait très mal !"}}
 
 #Fonction permettant le passage du menu titre au jeu
 def titleToGame():
@@ -536,12 +594,12 @@ def displayChar():
         b = Button(txt, text = "+ Dexterity", command = lambda i = "dexterity" : attribPoint(i))
         b.place(x = 150, y = 75, height = 20, width = 64)
 
-    txt.create_text(300, 15, text = "LVL : " + str(stats["LVL"]), anchor = NW)
+    txt.create_text(270, 15, text = "LVL : " + str(stats["LVL"]), anchor = NW)
 
     exp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 50, maximum = calcXP(stats["LVL"]), value = stats["XP"], style = "green.Horizontal.TProgressbar")
-    exp.place(x = 300, y = 35)
+    exp.place(x = 270, y = 35)
 
-    txt.create_text(300, 55, text = "XP : " + str(stats["XP"]) + " / " + str(calcXP(stats["LVL"])), anchor = NW)
+    txt.create_text(270, 55, text = "XP : " + str(stats["XP"]) + " / " + str(calcXP(stats["LVL"])), anchor = NW)
 
     hp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 100, maximum = stats["maxHP"], value = stats["HP"], style = "red.Horizontal.TProgressbar")
     hp.place(x = 400, y = 15, anchor = NW)
@@ -572,6 +630,7 @@ def invToMenu():
     clearTxt()
     clearMenu()
     showMenu()
+    unlock()
 
 #Fonction appelée quand on choisit un objet dans l'inventaire
 def pickItem(item):
@@ -601,12 +660,14 @@ def displayInventory(offset = 0):
         showMenu()
         return
     elif len(stats["inventory"]) < 5:
+        lock()
         yo = 84
         for item in stats["inventory"].keys():
             b = Button(menu, text = item + " x " + str(stats["inventory"][item]), command = lambda i = item : pickItem(i))
             b.place(x = 10, y = yo, height = 64, width = 108)
             yo += 74
     else:
+        lock()
         if offset + 4 > len(stats["inventory"]):
             offset -= 1
         elif offset < 0:
@@ -651,6 +712,7 @@ def pickEquipment(item):
 #Fonction permettant d'afficher l'équipement
 def displayEquipment():
     global stats, menu
+    lock()
     clearMenu()
     yo = 10
     for slot in list(stats["items"].keys()):
@@ -670,11 +732,11 @@ def showMenu():
     c = Button(menu, text = "Perso", command = displayChar)
     c.place(x = 10, y = 10, width = 108, height = 64)
     i = Button(menu, text = "Inventaire", command = displayInventory)
-    i.place(x = 10, y = 84, width = 108, height = 64)
+    i.place(x = 10, y = 158, width = 108, height = 64)
     s = Button(menu, text = "Sauvegarder", command = save)
-    s.place(x = 10, y = 158, width = 108, height = 64)
+    s.place(x = 10, y = 232, width = 108, height = 64)
     e = Button(menu, text = "Equipement", command = displayEquipment)
-    e.place(x = 10, y = 232, width = 108, height = 64)
+    e.place(x = 10, y = 84, width = 108, height = 64)
 
 #Fonction permettant d'afficher l'écran de combat
 def fightScreen(name):
@@ -727,6 +789,7 @@ def fight(name):
     clearMenu()
     for key in enemyIndex[name].keys():
          estats[key] = enemyIndex[name][key]
+    estats["effects"] = {}
     message("Combat contre un : " + name, lambda : fightScreen(name))
 
 #Fonction permettant de lancer un dialogue avec un pnj
@@ -782,11 +845,13 @@ def blockAction(block):
 
 #Fonction permettant de déclencher des triggers
 def triggerAction(x , y, name):
-  global width, blocks, pnjs, triggers, main, dialogs, enemyIndex, chests
+  global width, blocks, pnjs, triggers, main, dialogs, enemyIndex, chests, canFight, xOffset, yOffset
   if name.startswith("FIGHT:"):
-      if random.random() <= 1 / enemyIndex[name[len("FIGHT:"):]]["proba"]:
+      if random.random() <= 1 / enemyIndex[name[len("FIGHT:"):]]["proba"] and canFight == True:
+          canFight = False
           fight(name[len("FIGHT:"):])
   elif name.startswith("LOAD:"):
+    canFight = False
     lock()
     blocks = []
     pnjs = []
@@ -794,7 +859,12 @@ def triggerAction(x , y, name):
     dialogs = {}
     chests = {}
     main.delete('all')
+    clearMain()
+    main.create_text(100,100,text = "Chargement...", fill = "white")
+    main.update()
     loadResources(open(name[len("LOAD:"):],'r'))
+    main.delete("all")
+    draw(xOffset, yOffset)
     unlock()
   elif name.startswith("MESSAGE:"):
     lock()
@@ -1003,18 +1073,18 @@ def createMap(f):
 #Fonction de chargement des pnjs
 def createPNJ(f):
   global pnjs, width, images, dialogs
-  line = f.readline().rstrip("\n")
-  name = f.readline().rstrip("\n")
-  ipath = f.readline().rstrip("\n")
-  path = f.readline().rstrip("\n")
-  x = int(f.readline().rstrip("\n"))
-  y = int(f.readline().rstrip("\n"))
+  line = f.readline().rstrip("\n") #{
+  name = f.readline().rstrip("\n") #NOM
+  ipath = f.readline().rstrip("\n") #Image
+  path = f.readline().rstrip("\n")  #Dialogue
+  x = int(f.readline().rstrip("\n")) #X
+  y = int(f.readline().rstrip("\n")) #Y
   pnjs[x + y * width] = name
   images[name] = loadImage(ipath)
   file = open(path, "r")
   dialogs[name] = file.readlines()
   file.close()
-  line = f.readline().rstrip("\n")
+  line = f.readline().rstrip("\n") #}
 
 #Fonction de chargement des triggers
 def createTrigger(f):
@@ -1174,7 +1244,7 @@ def unequip(name):
 
 #Fonction traitant les entrées clavier
 def keyListener(event):
-  global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt, lastMove
+  global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt, lastMove, canFight
   if isLocked() == True:
     a = event.keycode
     vx = 0
@@ -1201,6 +1271,7 @@ def keyListener(event):
       xOffset += vx
       yOffset += vy
       lastMove = time.time()
+      canFight = True
       for trigger in triggers[x + y * width]:
         triggerAction(x, y, trigger)
     if a == ENTER:
@@ -1283,7 +1354,7 @@ f.close()
 if os.path.exists("test.save"):
     load()
 else:
-    stats = {"LVL" : 1, "XP" : 0, "lvlPoints" : 0, "gold" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["Punch"]}
+    stats = {"LVL" : 1, "XP" : 0,"effects" : {} ,"lvlPoints" : 0, "gold" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 0, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["Punch"]}
     f = open('level1.level','r')
     loadResources(f)
     f.close()
