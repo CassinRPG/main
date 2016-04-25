@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import tkinter.font
 from PIL import Image, ImageTk
 
 def loadImage(path):
@@ -10,14 +11,17 @@ def loadImage(path):
 def createWindow(keyListener):
     global root, windowWidth, windowHeight
     root = Tk()
-    
+
     windowWidth = 704
     windowHeight = 704
-   
-    root.title("AVENTURE Alpha 0.4")#TODO
-    root.resizable(width = FALSE, height = FALSE)
-    root.geometry(str(windowWidth)+ "x" + str(windowHeight))
-    root.bind("<Key>",keyListener)
+
+    root.title("AVENTURE")  #TITRE
+    root.resizable(width = FALSE, height = FALSE) #Pas redimensionnable
+    root.geometry(str(windowWidth)+ "x" + str(windowHeight)) #On choisit les dimensions de la fenetre
+    root.bind("<Key>",keyListener) #On ajoute le keyListener
+
+    default_font = tkinter.font.nametofont("TkDefaultFont") #Mise en place du font
+    default_font.configure(family="Breathe Fire", size = 14) #Breathe Fire
 
 def gameCanvas():
     global windowWidth, windowHeight, root
@@ -29,8 +33,10 @@ def gameCanvas():
     textCanvas.place(x = 0, y = 576)
     menuCanvas.place(x = 576, y = 0)
 
-    root.update()
     
+
+    root.update()
+
     return mainCanvas, textCanvas, menuCanvas
 
 def titleMenu(onPlay, background):
@@ -61,7 +67,7 @@ def dialogNext():
         b.destroy()
         root.update()
         l()
-        
+
 def dialog(canvas, dialog, unlock):
     global label, d, index, b, l
     l = unlock
@@ -71,7 +77,7 @@ def dialog(canvas, dialog, unlock):
     label.place(x = 30, y = 40)
     button = Button(canvas, text = "OK", command = dialogNext)
     button.place(x = 30, y = 60)
-    b = button 
+    b = button
     root.update()
 
 def okbutton():
