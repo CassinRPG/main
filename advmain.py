@@ -5,7 +5,7 @@ import random
 import pickle
 import os.path
 
-#Initialisation des variables
+# -  -  -  Initialisation des variables  -  -  -
 
 #Taille de la map
 width = 0
@@ -200,7 +200,7 @@ slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
-blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "ARBRE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", GTORCHED_TREE1 : "GTORCHED_TREE1.jpg", GTORCHED_TREE2 : "GTORCHED_TREE2.jpg", DTORCHED_TREE1 : "DTORCHED_TREE1.jpg", DTORCHED_TREE2 : "DTORCHED_TREE2.jpg", TRAN_DG_1 : "TRAN_DG_1.jpg", TRAN_DG_2 : "TRAN_DG_2.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_GD_1 : "TRAN_GD_1.jpg", TRAN_GD_2 : "TRAN_GD_2.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_HOR1 : "TRAN_HOR1.jpg", TRAN_HOR2 : "TRAN_HOR2.jpg", TRAN_VER1 : "TRAN_VER1.jpg", TRAN_VER2 : "TRAN_VER2.jpg", END_D : "END_D.jpg", END_G : "END_G.jpg", END_H : "END_H.jpg", END_B : "END_B.jpg", PATH_GRASS_BDG : "PATH_GRASS_BDG.jpg", PATH_GRASS_BHG : "PATH_GRASS_BHG.jpg", PATH_GRASS_BDH : "PATH_GRASS_BDH.jpg", PATH_GRASS_HDG : "PATH_GRASS_HDG.jpg", PATH_GRASS_BHGD : "PATH_GRASS_BHGD.jpg", OPEN_CHEST : "OPEN_CHEST.png", ROCK_FLOOR : "ROCK_FLOOR.png", ROCK_WALL : "ROCK_WALL.jpg",ROCK_CIRCLE_NW : "CIRCLE_NW.png", ROCK_CIRCLE_N : "CIRCLE_N.png", ROCK_CIRCLE_NE : "CIRCLE_NE.png", ROCK_CIRCLE_W : "CIRCLE_W.png", ROCK_CIRCLE_C : "CIRCLE_C.png", ROCK_CIRCLE_E : "CIRCLE_E.png", ROCK_CIRCLE_SW : "CIRCLE_SW.png", ROCK_CIRCLE_S : "CIRCLE_S.png", ROCK_CIRCLE_SE : "CIRCLE_SE.png"}
+blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "ARBRE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "GRASS_HOUSE_1.jpg", GRASS_HOUSE_2 : "GRASS_HOUSE_2.jpg", GRASS_HOUSE_3 : "GRASS_HOUSE_3.jpg", GRASS_HOUSE_4 : "GRASS_HOUSE_4.jpg", GRASS_HOUSE_5 : "GRASS_HOUSE_5.jpg", GRASS_HOUSE_6 : "GRASS_HOUSE_6.jpg", GRASS_HOUSE_7 : "GRASS_HOUSE_7.jpg", GRASS_HOUSE_8 : "GRASS_HOUSE_8.jpg", GRASS_HOUSE_9 : "GRASS_HOUSE_9.jpg", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", GTORCHED_TREE1 : "GTORCHED_TREE1.jpg", GTORCHED_TREE2 : "GTORCHED_TREE2.jpg", DTORCHED_TREE1 : "DTORCHED_TREE1.jpg", DTORCHED_TREE2 : "DTORCHED_TREE2.jpg", TRAN_DG_1 : "TRAN_DG_1.jpg", TRAN_DG_2 : "TRAN_DG_2.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_GD_1 : "TRAN_GD_1.jpg", TRAN_GD_2 : "TRAN_GD_2.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_HOR1 : "TRAN_HOR1.jpg", TRAN_HOR2 : "TRAN_HOR2.jpg", TRAN_VER1 : "TRAN_VER1.jpg", TRAN_VER2 : "TRAN_VER2.jpg", END_D : "END_D.jpg", END_G : "END_G.jpg", END_H : "END_H.jpg", END_B : "END_B.jpg", PATH_GRASS_BDG : "PATH_GRASS_BDG.jpg", PATH_GRASS_BHG : "PATH_GRASS_BHG.jpg", PATH_GRASS_BDH : "PATH_GRASS_BDH.jpg", PATH_GRASS_HDG : "PATH_GRASS_HDG.jpg", PATH_GRASS_BHGD : "PATH_GRASS_BHGD.jpg", OPEN_CHEST : "OPEN_CHEST.png",ROCK_FLOOR : "ROCK_FLOOR.png", ROCK_WALL: "ROCK_WALL.jpg", ROCK_CIRCLE_NW : "CIRCLE_NW.png", ROCK_CIRCLE_N : "CIRCLE_N.png", ROCK_CIRCLE_NE : "CIRCLE_NE.png", ROCK_CIRCLE_W : "CIRCLE_W.png", ROCK_CIRCLE_C : "CIRCLE_C.png", ROCK_CIRCLE_E : "CIRCLE_E.png", ROCK_CIRCLE_SW : "CIRCLE_SW.png", ROCK_CIRCLE_S : "CIRCLE_S.png", ROCK_CIRCLE_SE : "CIRCLE_SE.png"}
 
 #Dictionnaire de solidité des blocs
 solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True , CHEST: True, GTORCHED_TREE1 : True, GTORCHED_TREE2 : True, DTORCHED_TREE1 : True, DTORCHED_TREE2 : True, TRAN_DG_1 : False, TRAN_DG_2 : False, TRAN_DG_3 : False, TRAN_DG_4 : False, TRAN_GD_1 : False, TRAN_GD_2 : False, TRAN_GD_3 : False, TRAN_GD_4 : False, TRAN_HOR1 : False, TRAN_HOR2 : False, TRAN_VER1 : False, TRAN_VER2 : False, END_D : False, END_G : False, END_H : False, END_B : False, PATH_GRASS_BDG : False, PATH_GRASS_BHG : False, PATH_GRASS_BDH : False, PATH_GRASS_HDG : False, PATH_GRASS_BHGD : False, OPEN_CHEST : True, ROCK_WALL : True, ROCK_FLOOR : False, ROCK_CIRCLE_NW : False, ROCK_CIRCLE_N : False, ROCK_CIRCLE_NE : False, ROCK_CIRCLE_W : False, ROCK_CIRCLE_C : False, ROCK_CIRCLE_E : False, ROCK_CIRCLE_SW : False, ROCK_CIRCLE_S : False, ROCK_CIRCLE_SE : False}
@@ -676,39 +676,39 @@ def displayChar():
     s3.theme_use('clam')
     s3.configure("green.Horizontal.TProgressbar", foreground = "green", background = "green")
 
-    txt.create_text(15, 15, text = "Name : ", anchor = NW)
+    txt.create_text(15, 10, text = "Name : ", anchor = NW)
 
-    txt.create_text(15, 35, text = "Strength : " + str(stats["strength"]), anchor = NW)
-    txt.create_text(15, 55, text = "Wisdom : " + str(stats["wisdom"]), anchor = NW)
-    txt.create_text(15, 75, text = "Dexterity : " + str(stats["dexterity"]), anchor = NW)
-    txt.create_text(15, 95, text = "Armor : " + str(stats["armor"]), anchor = NW)
-    txt.create_text(15, 115, text = "Gold : " + str(stats["gold"]), anchor = NW)
+    txt.create_text(15, 30, text = "Strength : " + str(stats["strength"]), anchor = NW)
+    txt.create_text(15, 50, text = "Wisdom : " + str(stats["wisdom"]), anchor = NW)
+    txt.create_text(15, 70, text = "Dexterity : " + str(stats["dexterity"]), anchor = NW)
+    txt.create_text(15, 90, text = "Armor : " + str(stats["armor"]), anchor = NW)
+    txt.create_text(15, 110, text = "Gold : " + str(stats["gold"]), anchor = NW)
 
     if stats["lvlPoints"] != 0:
-        txt.create_text(150, 15, text = "Points à dépenser : " + str(stats["lvlPoints"]), anchor = NW)
+        txt.create_text(150, 10, text = "Points à dépenser : " + str(stats["lvlPoints"]), anchor = NW)
         b = Button(txt, text = "+ Strength", command = lambda i = "strength" : attribPoint(i))
-        b.place(x = 150, y = 35, height = 20, width = 64)
+        b.place(x = 150, y = 30, height = 20, width = 64)
         b = Button(txt, text = "+ Widsom", command = lambda i = "wisdom" : attribPoint(i))
-        b.place(x = 150, y = 55, height = 20, width = 64)
+        b.place(x = 150, y = 50, height = 20, width = 64)
         b = Button(txt, text = "+ Dexterity", command = lambda i = "dexterity" : attribPoint(i))
-        b.place(x = 150, y = 75, height = 20, width = 64)
+        b.place(x = 150, y = 70, height = 20, width = 64)
 
-    txt.create_text(270, 15, text = "LVL : " + str(stats["LVL"]), anchor = NW)
+    txt.create_text(270, 10, text = "LVL : " + str(stats["LVL"]), anchor = NW)
 
     exp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 50, maximum = calcXP(stats["LVL"]), value = stats["XP"], style = "green.Horizontal.TProgressbar")
-    exp.place(x = 270, y = 35)
+    exp.place(x = 270, y = 30)
 
-    txt.create_text(270, 55, text = "XP : " + str(stats["XP"]) + " / " + str(calcXP(stats["LVL"])), anchor = NW)
+    txt.create_text(270, 50, text = "XP : " + str(stats["XP"]) + " / " + str(calcXP(stats["LVL"])), anchor = NW)
 
     hp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 100, maximum = stats["maxHP"], value = stats["HP"], style = "red.Horizontal.TProgressbar")
-    hp.place(x = 400, y = 15, anchor = NW)
+    hp.place(x = 400, y = 10, anchor = NW)
 
-    txt.create_text(400, 35, text = "HP : " + str(stats["HP"]) + " / " + str(stats["maxHP"]), anchor = NW)
+    txt.create_text(400, 30, text = "HP : " + str(stats["HP"]) + " / " + str(stats["maxHP"]), anchor = NW)
 
     mp = ttk.Progressbar(txt, orient = "horizontal", mode = "determinate", length = 100, maximum = stats["maxMP"], value = stats["MP"], style = "cyan.Horizontal.TProgressbar")
-    mp.place(x = 400, y = 55, anchor = NW)
+    mp.place(x = 400, y = 50, anchor = NW)
 
-    txt.create_text(400, 75, text = "MP : " + str(stats["MP"]) + " / " + str(stats["maxMP"]), anchor = NW)
+    txt.create_text(400, 70, text = "MP : " + str(stats["MP"]) + " / " + str(stats["maxMP"]), anchor = NW)
 
     b = Button(txt, text = "Retour", command = back)
     b.place(x = 550, y = 60, width = 108, height = 64)
@@ -1199,6 +1199,7 @@ def createTrigger(f):
       triggers[x + y * width].append(name)
 
   except Exception :
+      
       i = x.find("-")
       startX = int(x[:i])
       endX = int(x[i + 1:])
@@ -1389,6 +1390,7 @@ def keyListener(event):
         else:
           blockAction(blocks[x + vx + ( y + vy ) * width])
     draw(xOffset,yOffset)
+    print(str(x) + "     " + str(y))
 
 #Début du programme principal
 createWindow(keyListener)
