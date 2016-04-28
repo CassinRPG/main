@@ -168,6 +168,8 @@ PATH_GRASS_HDG = 59
 
 PATH_GRASS_BHGD = 60
 
+ROCK2_DIRT = 61
+
 CHEST = 400
 
 OPEN_CHEST = 401
@@ -998,7 +1000,7 @@ def sell():
             offset -= 1
         elif offset < 0:
             offset = 0
-        up = Button(menu, text = "UP", command = lambda o = offset - 1 : displayInventory(offset = o))
+        up = Button(menu, text = "UP", command = lambda o = offset - 1 : displayInve}, ntory(offset = o))
         up.place(x = 10, y = 10, height = 64, width = 108)
         down = Button(menu, text = "DOWN", command = lambda o = offset + 1 : displayInventory(offset = o))
         down.place(x = 10, y = 10 + 5 * 74, height = 64, width = 108)
