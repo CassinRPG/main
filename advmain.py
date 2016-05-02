@@ -1003,6 +1003,23 @@ def triggerAction(x , y, name):
     clearMenu()
     shop(name[len("SHOP:"):])
 
+# Fonction d'apprentissage d'un sort
+def addSkills(skill) :
+    global skills
+    if skill in stats["skills"] :
+        return(False)
+    else :
+        stats["skills"].append(skill)
+        return(True)
+
+# Fonction dialogue du sort // fonction d'apprentissage
+def addSkillsPNJ(skill) :
+    global skills
+    if addSkills(skill) == True :
+        dialog(variable)
+    else :
+        dialog(variable)
+
 #Fonction permettant de vendre des objets
 def sell():
     global txt, menu, stats
