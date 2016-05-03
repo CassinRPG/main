@@ -30,13 +30,7 @@ Up
 }
 [TRIGGER]
 {
-LOAD:mapsuivante.level
+LOAD:Cabanon.level
 19
 7
-}
-[TRIGGER]
-{
-LOAD:mapprécédente.level
-2
-19
 }
