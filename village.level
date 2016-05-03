@@ -29,7 +29,7 @@ Right
 [PNJ]
 {
 Villageois 1
-H_Hum_2.jpg
+Humain 1 face.png
 Villageois 1.pnj
 1
 15
@@ -37,7 +37,7 @@ Villageois 1.pnj
 [PNJ]
 {
 Villageois 2
-H_Hum_1.jpg
+Humain 3 profil.png
 Villageois 4.pnj
 2
 14
@@ -45,8 +45,8 @@ Villageois 4.pnj
 [PNJ]
 {
 Villageois 3
-H_Hum_1_DOS.jpg
-none.pnj
+Humain 2 dos.png
+none.txt
 3
 9
 }
@@ -61,7 +61,7 @@ Elfe 1.pnj
 [PNJ]
 {
 Villageois 4
-H_Hum_2.jpg
+Humain 3 profil.png
 Villageois 2.pnj
 6
 2
@@ -69,16 +69,16 @@ Villageois 2.pnj
 [PNJ]
 {
 Villageois 5
-H_Hum_1_DOS.jpg
-none.pnj
-11
+Humain 2 dos.png
+none.txt
+10
 3
 }
 [PNJ]
 {
 Chat 1
 chat.jpg
-none.pnj
+none.txt
 16
 2
 }
@@ -94,7 +94,7 @@ Chat.pnj
 {
 Elfe 2
 H_Elf_1_DOS.jpg
-none.pnj
+none.txt
 6
 10
 }
@@ -102,15 +102,15 @@ none.pnj
 {
 Villageois 6
 H_Hum_1_DOS.jpg
-none.pnj
+none.txt
 10
 10
 }
 [PNJ]
 {
 Villageois 7
-H_Hum_2.jpg
-none.pnj
+Humain 1 face.png
+none.txt
 13
 10
 }
