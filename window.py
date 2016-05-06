@@ -26,8 +26,8 @@ def createWindow(keyListener):
 def gameCanvas():
     global windowWidth, windowHeight, root
     mainCanvas = Canvas(root, width = 576 ,height = 576, bg = "black", bd = 0, highlightthickness=0)
-    textCanvas = Canvas(root, width = 704,height = 128, bg = "#39CAFA", bd = 0, highlightthickness=0)
-    menuCanvas = Canvas(root, width = 128,height = 576, bg = "green", bd = 0, highlightthickness=0)
+    textCanvas = Canvas(root, width = 704,height = 128, bg = "#9999ff", bd = 0, highlightthickness=0)
+    menuCanvas = Canvas(root, width = 128,height = 576, bg = "#9999ff", bd = 0, highlightthickness=0)
 
     mainCanvas.place(x = 0, y = 0)
     textCanvas.place(x = 0, y = 576)
