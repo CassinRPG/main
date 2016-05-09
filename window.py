@@ -60,7 +60,7 @@ def dialogNext():
     global label, d, index, root, b, l
     index += 1
     if index < len(d):
-        label.config(text = d[index], bg = "#39CAFA")
+        label.config(text = d[index], bg = "#4d4dff")
         root.update()
     else:
         label.destroy()
@@ -73,8 +73,8 @@ def dialog(canvas, dialog, unlock):
     l = unlock
     index = 0
     d = dialog
-    label = Label(canvas, text = d[index], bg = "#39CAFA")
-    label.place(x = 30, y = 40)
+    label = Label(canvas, text = d[index], bg = "#4d4dff")
+    label.place(x = 30, y = 35)
     button = Button(canvas, text = "OK", command = dialogNext)
     button.place(x = 30, y = 60)
     b = button
