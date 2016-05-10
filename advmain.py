@@ -22,20 +22,20 @@ ENTER = 13
 #Taille des images
 IMAGE_SIZE = 64
 
-#Nombre de blocs Ã  l'Ã©cran
+#Nombre de blocs ÃƒÆ’Ã‚Â  l'ÃƒÆ’Ã‚Â©cran
 blocksWidth = 9
 blocksHeight = 9
 
-#Tableaux reprÃ©sentant la carte
+#Tableaux reprÃƒÆ’Ã‚Â©sentant la carte
 blocks = []
 pnjs = []
 triggers = {}
 
-#Offset camÃ©ra
+#Offset camÃƒÆ’Ã‚Â©ra
 xOffset = 0
 yOffset = 0
 
-#CoordonnÃ©es du joueur
+#CoordonnÃƒÆ’Ã‚Â©es du joueur
 x = 3
 y = 3
 
@@ -45,7 +45,7 @@ direction = "Up"
 #Variable permettant de lock
 l = [False]
 
-#DÃ©claration des blocs sous forme de constantes.
+#DÃƒÆ’Ã‚Â©claration des blocs sous forme de constantes.
 VOID_BLOCK = 0
 
 GRASS = 1
@@ -222,44 +222,63 @@ CA_S = 427
 
 CA_SE = 428
 
-#Tableaux dÃ©crivant les emplacements/caractÃ©ristiques
+CA_D_NW = 430
+
+CA_D_N = 431
+
+CA_D_NE = 432
+
+CA_D_W = 433
+
+CA_D_C = 434
+
+CA_D_E = 435
+
+CA_D_SW = 436
+
+CA_D_S = 437
+
+CA_D_SE = 438
+
+
+#Tableaux dÃƒÆ’Ã‚Â©crivant les emplacements/caractÃƒÆ’Ã‚Â©ristiques
 slots = ["helmet", "chest", "weapon", "boots"]
 caracs = ["maxHP", "maxMP", "armor", "strength", "wisdom", "dexterity"]
 
 #Dictionnaire vers les images des blocs
-blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "ARBRE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "CA_NW.png", GRASS_HOUSE_2 : "CA_N.png", GRASS_HOUSE_3 : "CA_NE.png", GRASS_HOUSE_4 : "CA_W.png", GRASS_HOUSE_5 : "CA_C.png", GRASS_HOUSE_6 : "CA_E.png", GRASS_HOUSE_7 : "CA_SW.png", GRASS_HOUSE_8 : "CA_S.png", GRASS_HOUSE_9 : "CA_SE.png", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg", TABLE_3 : "TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", GTORCHED_TREE1 : "GTORCHED_TREE1.jpg", GTORCHED_TREE2 : "GTORCHED_TREE2.jpg", DTORCHED_TREE1 : "DTORCHED_TREE1.jpg", DTORCHED_TREE2 : "DTORCHED_TREE2.jpg", TRAN_DG_1 : "TRAN_DG_1.jpg", TRAN_DG_2 : "TRAN_DG_2.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_GD_1 : "TRAN_GD_1.jpg", TRAN_GD_2 : "TRAN_GD_2.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_HOR1 : "TRAN_HOR1.jpg", TRAN_HOR2 : "TRAN_HOR2.jpg", TRAN_VER1 : "TRAN_VER1.jpg", TRAN_VER2 : "TRAN_VER2.jpg", END_D : "END_D.jpg", END_G : "END_G.jpg", END_H : "END_H.jpg", END_B : "END_B.jpg", PATH_GRASS_BDG : "PATH_GRASS_BDG.jpg", PATH_GRASS_BHG : "PATH_GRASS_BHG.jpg", PATH_GRASS_BDH : "PATH_GRASS_BDH.jpg", PATH_GRASS_HDG : "PATH_GRASS_HDG.jpg", PATH_GRASS_BHGD : "PATH_GRASS_BHGD.jpg", OPEN_CHEST : "OPEN_CHEST.png",ROCK_FLOOR : "ROCK_FLOOR.png", ROCK_WALL: "ROCK_WALL.jpg", ROCK_CIRCLE_NW : "CIRCLE_NW.png", ROCK_CIRCLE_N : "CIRCLE_N.png", ROCK_CIRCLE_NE : "CIRCLE_NE.png", ROCK_CIRCLE_W : "CIRCLE_W.png", ROCK_CIRCLE_C : "CIRCLE_C.png", ROCK_CIRCLE_E : "CIRCLE_E.png", ROCK_CIRCLE_SW : "CIRCLE_SW.png", ROCK_CIRCLE_S : "CIRCLE_S.png", ROCK_CIRCLE_SE : "CIRCLE_SE.png", ROCK2_DIRT : "ROCK2_DIRT.jpg", CA_NW : "CA_NW.png", CA_N : "CA_N.png", CA_NE : "CA_NE.png", CA_W : "CA_W.png", CA_C : "CA_C.png", CA_E : "CA_E.png", CA_SW : "CA_SW.png", CA_S : "CA_S.png", CA_SE : "CA_SE.png", GRASS_BUSH : "GRASS_BUSH.png", DIRT_BUSH : "DIRT_BUSH.png", SKULL : "SKULL_FROCK.png", WEB : "WEB_FROCK.png"}
+blockIndex = {VOID_BLOCK : "VOID.jpg", GRASS : "GRASS.jpg", DIRT : "DIRT.jpg", PATH_GRASS_VERTICAL : "PATH_GRASS_VERTICAL.jpg", PATH_GRASS_HORIZONTAL : "PATH_GRASS_HORIZONTAL.jpg", PATH_GRASS_HVD : "PATH_GRASS_HVD.jpg", PATH_GRASS_HVG : "PATH_GRASS_HVG.jpg", PATH_GRASS_BVD : "PATH_GRASS_BVD.jpg", PATH_GRASS_BVG : "PATH_GRASS_BVG.jpg", PATH_DIRT_VERTICAL : "PATH_DIRT_VERTICAL.jpg", PATH_DIRT_HORIZONTAL : "PATH_DIRT_HORIZONTAL.jpg", PATH_DIRT_HVD : "PATH_DIRT_HVD.jpg", PATH_DIRT_HVG : "PATH_DIRT_HVG.jpg", PATH_DIRT_BVD : "PATH_DIRT_BVD.jpg", PATH_DIRT_BVG : "PATH_DIRT_BVG.jpg", TREE_1 : "TREE_1.jpg", TREE_2 : "ARBRE_2.jpg", ROCK_GRASS : "ROCK_GRASS.jpg", ROCK_DIRT : "ROCK_DIRT.jpg", GRASS_HOUSE_1 : "CA_NW.png", GRASS_HOUSE_2 : "CA_N.png", GRASS_HOUSE_3 : "CA_NE.png", GRASS_HOUSE_4 : "CA_W.png", GRASS_HOUSE_5 : "CA_C.png", GRASS_HOUSE_6 : "CA_E.png", GRASS_HOUSE_7 : "CA_SW.png", GRASS_HOUSE_8 : "CA_S.png", GRASS_HOUSE_9 : "CA_SE.png", FLOOR : "FLOOR.jpg", TABLE_1 : "TABLE_1.jpg", TABLE_2 : "TABLE_2.jpg",TABLE_3:"TABLE_3.jpg", TABLE_4 : "TABLE_4.jpg", PILLOW : "PILLOW.jpg", SHELF_SMALL : "SHELF_SMALL.jpg", FLOWER : "FLOWER.jpg", CHEST : "CHEST.png", GTORCHED_TREE1 : "GTORCHED_TREE1.jpg", GTORCHED_TREE2 : "GTORCHED_TREE2.jpg", DTORCHED_TREE1 : "DTORCHED_TREE1.jpg", DTORCHED_TREE2 : "DTORCHED_TREE2.jpg", TRAN_DG_1 : "TRAN_DG_1.jpg", TRAN_DG_2 : "TRAN_DG_2.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_DG_3 : "TRAN_DG_3.jpg", TRAN_GD_1 : "TRAN_GD_1.jpg", TRAN_GD_2 : "TRAN_GD_2.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_GD_3 : "TRAN_GD_3.jpg", TRAN_HOR1 : "TRAN_HOR1.jpg", TRAN_HOR2 : "TRAN_HOR2.jpg", TRAN_VER1 : "TRAN_VER1.jpg", TRAN_VER2 : "TRAN_VER2.jpg", END_D : "END_D.jpg", END_G : "END_G.jpg", END_H : "END_H.jpg", END_B : "END_B.jpg", PATH_GRASS_BDG : "PATH_GRASS_BDG.jpg", PATH_GRASS_BHG : "PATH_GRASS_BHG.jpg", PATH_GRASS_BDH : "PATH_GRASS_BDH.jpg", PATH_GRASS_HDG : "PATH_GRASS_HDG.jpg", PATH_GRASS_BHGD : "PATH_GRASS_BHGD.jpg", OPEN_CHEST : "OPEN_CHEST.png",ROCK_FLOOR : "ROCK_FLOOR.png", ROCK_WALL: "ROCK_WALL.jpg", ROCK_CIRCLE_NW : "CIRCLE_NW.png", ROCK_CIRCLE_N : "CIRCLE_N.png", ROCK_CIRCLE_NE : "CIRCLE_NE.png", ROCK_CIRCLE_W : "CIRCLE_W.png", ROCK_CIRCLE_C : "CIRCLE_C.png", ROCK_CIRCLE_E : "CIRCLE_E.png", ROCK_CIRCLE_SW : "CIRCLE_SW.png", ROCK_CIRCLE_S : "CIRCLE_S.png", ROCK_CIRCLE_SE : "CIRCLE_SE.png", ROCK2_DIRT : "ROCK2_DIRT.jpg", CA_NW : "CA_NW.png", CA_N : "CA_N.png", CA_NE : "CA_NE.png", CA_W : "CA_W.png", CA_C : "CA_C.png", CA_E : "CA_E.png", CA_SW : "CA_SW.png", CA_S : "CA_S.png", CA_SE : "CA_SE.png", GRASS_BUSH : "GRASS_BUSH.png", DIRT_BUSH : "DIRT_BUSH.png", SKULL : "SKULL_FROCK.png", WEB : "WEB_FROCK.png",CA_D_NW : "CA_D_NW.png", CA_D_N : "CA_D_N.png", CA_D_NE : "CA_D_NE.png", CA_D_W : "CA_D_W.png", CA_D_C : "CA_C.png", CA_D_E : "CA_D_E.png", CA_D_SW : "CA_D_SW.png", CA_D_S : "CA_D_S.png", CA_D_SE : "CA_D_SE.png"}
 
-#Dictionnaire de soliditÃ© des blocs
-solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True , CHEST: True, GTORCHED_TREE1 : True, GTORCHED_TREE2 : True, DTORCHED_TREE1 : True, DTORCHED_TREE2 : True, TRAN_DG_1 : False, TRAN_DG_2 : False, TRAN_DG_3 : False, TRAN_DG_4 : False, TRAN_GD_1 : False, TRAN_GD_2 : False, TRAN_GD_3 : False, TRAN_GD_4 : False, TRAN_HOR1 : False, TRAN_HOR2 : False, TRAN_VER1 : False, TRAN_VER2 : False, END_D : False, END_G : False, END_H : False, END_B : False, PATH_GRASS_BDG : False, PATH_GRASS_BHG : False, PATH_GRASS_BDH : False, PATH_GRASS_HDG : False, PATH_GRASS_BHGD : False, OPEN_CHEST : True, ROCK_WALL : True, ROCK_FLOOR : False, ROCK_CIRCLE_NW : False, ROCK_CIRCLE_N : False, ROCK_CIRCLE_NE : False, ROCK_CIRCLE_W : False, ROCK_CIRCLE_C : False, ROCK_CIRCLE_E : False, ROCK_CIRCLE_SW : False, ROCK_CIRCLE_S : False, ROCK_CIRCLE_SE : False, ROCK2_DIRT : True, CA_NW : True, CA_N : True, CA_NE : True, CA_W : True, CA_C : True, CA_E : True, CA_SW : True, CA_S : True, CA_SE : True, GRASS_BUSH : True, DIRT_BUSH : True, SKULL: True, WEB : True}
+#Dictionnaire de soliditÃƒÆ’Ã‚Â© des blocs
+solidIndex = {VOID_BLOCK : True, GRASS : False, DIRT : False, PATH_GRASS_VERTICAL : False, PATH_GRASS_HORIZONTAL : False,PATH_GRASS_HVD : False, PATH_GRASS_HVG : False, PATH_GRASS_BVD : False, PATH_GRASS_BVG : False, PATH_DIRT_VERTICAL : False, PATH_DIRT_HORIZONTAL : False, PATH_DIRT_HVD : False, PATH_DIRT_HVG : False, PATH_DIRT_BVD : False, PATH_DIRT_BVG : False, TREE_1 : True, TREE_2 : True, ROCK_GRASS : True, ROCK_DIRT : True, GRASS_HOUSE_1 : True, GRASS_HOUSE_2 : True, GRASS_HOUSE_3 : True, GRASS_HOUSE_4 : True, GRASS_HOUSE_5 : True, GRASS_HOUSE_6 : True, GRASS_HOUSE_7 : True, GRASS_HOUSE_8 : True, GRASS_HOUSE_9 : True, FLOOR : False, TABLE_1 : True, TABLE_2 : True, TABLE_3 : True, TABLE_4 : True, PILLOW : True, SHELF_SMALL : True, FLOWER : True , CHEST: True, GTORCHED_TREE1 : True, GTORCHED_TREE2 : True, DTORCHED_TREE1 : True, DTORCHED_TREE2 : True, TRAN_DG_1 : False, TRAN_DG_2 : False, TRAN_DG_3 : False, TRAN_DG_4 : False, TRAN_GD_1 : False, TRAN_GD_2 : False, TRAN_GD_3 : False, TRAN_GD_4 : False, TRAN_HOR1 : False, TRAN_HOR2 : False, TRAN_VER1 : False, TRAN_VER2 : False, END_D : False, END_G : False, END_H : False, END_B : False, PATH_GRASS_BDG : False, PATH_GRASS_BHG : False, PATH_GRASS_BDH : False, PATH_GRASS_HDG : False, PATH_GRASS_BHGD : False, OPEN_CHEST : True, ROCK_WALL : True, ROCK_FLOOR : False, ROCK_CIRCLE_NW : False, ROCK_CIRCLE_N : False, ROCK_CIRCLE_NE : False, ROCK_CIRCLE_W : False, ROCK_CIRCLE_C : False, ROCK_CIRCLE_E : False, ROCK_CIRCLE_SW : False, ROCK_CIRCLE_S : False, ROCK_CIRCLE_SE : False, ROCK2_DIRT : True, CA_NW : True, CA_N : True, CA_NE : True, CA_W : True, CA_C : True, CA_E : True, CA_SW : True, CA_S : True, CA_SE : True, GRASS_BUSH : True, DIRT_BUSH : True, SKULL: True, WEB : True, CA_D_NW : True, CA_D_N : True, CA_D_NE : True, CA_D_W : True, CA_D_C : True, CA_D_E : True, CA_D_SW : True, CA_D_S : True, CA_D_SE : True}
 
-#Dictionnaire des ennemis - ChargÃ© depuis les fichiers
+#Dictionnaire des ennemis - ChargÃƒÆ’Ã‚Â© depuis les fichiers
 enemyIndex = {}
 
-#Dictionnaire des objets - ChargÃ© depuis les fichiers
+#Dictionnaire des objets - ChargÃƒÆ’Ã‚Â© depuis les fichiers
 itemIndex = {}
 
-#Dictionnaire reprÃ©ristiques de l'ennemi que l'on combat
+#Dictionnaire reprÃƒÆ’Ã‚Â©ristiques de l'ennemi que l'on combat
 estats = {}
 
-#Dictionnaire reprÃ©sentant les caractÃ©ristiques du joueur - CaractÃ©ristiques de base.
+#Dictionnaire reprÃƒÆ’Ã‚Â©sentant les caractÃƒÆ’Ã‚Â©ristiques du joueur - CaractÃƒÆ’Ã‚Â©ristiques de base.
 stats = {"LVL" : 1, "XP" : 0, "maxHP" : 20, "HP" : 20, "maxMP" : 100, "MP" : 100, "strength" : 10, "wisdom" : 10, "dexterity" : 10, "armor" : 10, "items" : {"helmet" : "VOID", "chest" : "VOID" , "weapon" : "VOID", "boots" : "VOID"}, "inventory" : [], "skills" : ["Punch"]}
 
-#Variable globale utilisÃ©e en combat
+#Variable globale utilisÃƒÆ’Ã‚Â©e en combat
 myTurn = False
 
-#Dictionnaire associant une image Ã  un nom
+#Dictionnaire associant une image ÃƒÆ’Ã‚Â  un nom
 images = {}
 
-#Dictionnaire contenant les dialogues des diffÃ©rents pnjs
+#Dictionnaire contenant les dialogues des diffÃƒÆ’Ã‚Â©rents pnjs
 dialogs = {}
 
 #Tableaux contenant les objets disponibles en boutique
 shopItems = []
 
-#Dictionnaire contenant les objets dÃ©couverts dans les coffres.
+#Dictionnaire contenant les objets dÃƒÆ’Ã‚Â©couverts dans les coffres.
 chests = {}
 
-#Variable indiquant la derniÃ¨re fois qu'un mouvement a Ã©tÃ© effectuÃ© par le joueur - permet d'Ã©viter les dÃ©placements 'fusÃ©e'
+#Variable indiquant la derniÃƒÆ’Ã‚Â¨re fois qu'un mouvement a ÃƒÆ’Ã‚Â©tÃƒÆ’Ã‚Â© effectuÃƒÆ’Ã‚Â© par le joueur - permet d'ÃƒÆ’Ã‚Â©viter les dÃƒÆ’Ã‚Â©placements 'fusÃƒÆ’Ã‚Â©e'
 lastMove = 0
 
 #Variable permettant d'avoir un seul combat par case
@@ -271,7 +290,7 @@ def playMusic(path):
 def nothing():
     pass
 
-#Fonction de calcul pour le passage d'un niveau Ã  un autre
+#Fonction de calcul pour le passage d'un niveau ÃƒÆ’Ã‚Â  un autre
 def calcXP(lvl):
     return int( (900 / 99) * lvl * lvl + (9000 / 99) * lvl )
 
@@ -280,22 +299,22 @@ def lock():
     global l
     l[0] = False
 
-#Fonction permettant de dÃ©verrouiller
+#Fonction permettant de dÃƒÆ’Ã‚Â©verrouiller
 def unlock():
     global l
     l[0] = True
 
-#Fonction permettant de tester si le joueur est verrouillÃ© ou non
+#Fonction permettant de tester si le joueur est verrouillÃƒÆ’Ã‚Â© ou non
 def isLocked():
     global l
     return l[0]
 
-#Fonction appelÃ©e quand on appuie sur le bouton OK
+#Fonction appelÃƒÆ’Ã‚Â©e quand on appuie sur le bouton OK
 def okMessage(callback):
     global txt, okButton
     txt.delete("all")
     okButton.destroy()
-    callback() #On appelle la fonction passÃ©e en paramÃ¨tre
+    callback() #On appelle la fonction passÃƒÆ’Ã‚Â©e en paramÃƒÆ’Ã‚Â¨tre
 
 #Fonction permettant d'afficher un message, et d'appeler une autre fonction quand on appuie sur OK
 def message(string, callback):
@@ -305,7 +324,7 @@ def message(string, callback):
     okButton = Button(txt, text = "OK", command = lambda : okMessage(callback))
     okButton.place(x = 30, y = 50)
 
-#Fonction mettant Ã  jour les infos de combat
+#Fonction mettant ÃƒÆ’Ã‚Â  jour les infos de combat
 def updateFightScreen():
     global stats, estats, main, hishp, myhp, mymp
 
@@ -324,7 +343,7 @@ def updateFightScreen():
     main.update()
 
 
-#Fonction pour faire des dÃ©gÃ¢ts Ã  l'ennemi
+#Fonction pour faire des dÃƒÆ’Ã‚Â©gÃƒÆ’Ã‚Â¢ts ÃƒÆ’Ã‚Â  l'ennemi
 def dealDamage(amount):
     global stats, estats, main, menu, hishp
     amount = int(amount)
@@ -335,7 +354,7 @@ def dealDamage(amount):
     a = main.create_text(64, 64, text = str(int(amount)) + " !", tag="to_delete")
     updateFightScreen()
 
-#Fonction pour recevoir des dÃ©gÃ¢ts
+#Fonction pour recevoir des dÃƒÆ’Ã‚Â©gÃƒÆ’Ã‚Â¢ts
 def takeDamage(amount):
     global stats, estats, main, txt, myhp
     amount = int(amount)
@@ -402,7 +421,7 @@ def changeTurn():
         myTurn = True
         displaySkills()
 
-#Fonction permettant de dÃ©truire tous les widgets du canvas txt
+#Fonction permettant de dÃƒÆ’Ã‚Â©truire tous les widgets du canvas txt
 def clearTxt():
     global txt
     temp = []
@@ -412,7 +431,7 @@ def clearTxt():
         child.destroy()
         txt.update()
 
-#Fonction permettant de dÃ©truire tous les widgets du canvas menu
+#Fonction permettant de dÃƒÆ’Ã‚Â©truire tous les widgets du canvas menu
 def clearMenu():
     global menu
     temp = []
@@ -422,7 +441,7 @@ def clearMenu():
         child.destroy()
         menu.update()
 
-#Fonction permettant de dÃ©truire tous les widgets du canvas main
+#Fonction permettant de dÃƒÆ’Ã‚Â©truire tous les widgets du canvas main
 def clearMain():
     global main
     temp = []
@@ -458,7 +477,7 @@ def testLevelUp():
     else:
         unlock()
 
-#Fonction de gain d'expÃ©rience
+#Fonction de gain d'expÃƒÆ’Ã‚Â©rience
 def xp():
     global stats, estats, turnCounter
     bonusMultiplier = 1
@@ -470,7 +489,7 @@ def xp():
     stats["XP"] += gain
     message("Vous gagnez : " + str(gain) + " XP !", testLevelUp)
 
-#Fonction de test de gain d'objet Ã  la fin du combat
+#Fonction de test de gain d'objet ÃƒÆ’Ã‚Â  la fin du combat
 def testLoot():
     global stats, estats
     pick = random.choice(estats["loot"])
@@ -491,7 +510,7 @@ def doSkill(skill):
     txt.delete("all")
     main.delete("to_delete")
     if estats["HP"] <= 0:
-        message("Vous ÃƒÂªtes victorieux !", testLoot)
+        message("Vous ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªtes victorieux !", testLoot)
         clearMain()
         showMenu()
         draw(xOffset,yOffset)
@@ -582,7 +601,7 @@ def axeStrike():
 skills = {"Punch" : strike, "Blub" : blub, "Slurp": slurp, "Morsure" : bite, "Griffure" : clawing, "Lancer de couteau" : knife_throw, "Lancer d'os" : bone_throw}
 
 #Dictionnaire de description des sorts
-skillsDesc = {"Punch" : {"MP" : "0" , "desc" : "Un coup de poing basique."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}, "Morsure" : {"MP" : "0", "desc":"Une simple morsure."}, "Lancer de couteau" : {"MP" : "0", "desc" : "Tout est dans le nom."}, "Lancer d'os" : {"MP" : "0", "desc" : "Etonnament, un os lancé  grande vitesse fait très mal !"}, "Coup de hache" : {"MP":"0", "desc": "Un violent coup de hache à la manière d'un nain !"}}
+skillsDesc = {"Punch" : {"MP" : "0" , "desc" : "Un coup de poing basique."}, "Blub" : {"MP" : "0", "desc" : "BLBLBL"}, "Slurp" : {"MP" : "1", "desc" : "Sluuuuuurp"}, "Morsure" : {"MP" : "0", "desc":"Une simple morsure."}, "Lancer de couteau" : {"MP" : "0", "desc" : "Tout est dans le nom."}, "Lancer d'os" : {"MP" : "0", "desc" : "Etonnament, un os lancÃƒÂ©Ã‚Â  grande vitesse fait trÃƒÂ¨s mal !"}, "Coup de hache" : {"MP":"0", "desc": "Un violent coup de hache ÃƒÂ  la maniÃƒÂ¨re d'un nain !"}}
 
 #Fonction permettant le passage du menu titre au jeu
 def titleToGame():
@@ -681,7 +700,7 @@ def back():
     showMenu()
     unlock()
 
-#Fonction permettant d'attribuer un point dans une catÃ©gorie
+#Fonction permettant d'attribuer un point dans une catÃƒÆ’Ã‚Â©gorie
 def attribPoint(stat):
     global stats
     stats["lvlPoints"] -= 1
@@ -690,7 +709,7 @@ def attribPoint(stat):
     clearTxt()
     displayChar()
 
-#Fonction pour afficher des infos Ã  propos de l'Ã©tat du joueur
+#Fonction pour afficher des infos ÃƒÆ’Ã‚Â  propos de l'ÃƒÆ’Ã‚Â©tat du joueur
 def displayChar():
     global txt, stats
 
@@ -719,7 +738,7 @@ def displayChar():
     txt.create_text(15, 110, text = "Gold : " + str(stats["gold"]), anchor = NW)
 
     if stats["lvlPoints"] != 0:
-        txt.create_text(150, 10, text = "Points Ã  dÃ©penser : " + str(stats["lvlPoints"]), anchor = NW)
+        txt.create_text(150, 10, text = "Points ÃƒÆ’Ã‚Â  dÃƒÆ’Ã‚Â©penser : " + str(stats["lvlPoints"]), anchor = NW)
         b = Button(txt, text = "+ Strength", command = lambda i = "strength" : attribPoint(i))
         b.place(x = 150, y = 30, height = 20, width = 64)
         b = Button(txt, text = "+ Widsom", command = lambda i = "wisdom" : attribPoint(i))
@@ -747,7 +766,7 @@ def displayChar():
     b = Button(txt, text = "Retour", command = back)
     b.place(x = 550, y = 60, width = 108, height = 64)
 
-#Fonction pour Ã©quiper un objet  depuis l'inventaire
+#Fonction pour ÃƒÆ’Ã‚Â©quiper un objet  depuis l'inventaire
 def inventoryEquip(item):
     global stats, itemIndex
     if stats["items"][itemIndex[item]["slot"]] != "VOID":
@@ -765,7 +784,7 @@ def invToMenu():
     showMenu()
     unlock()
 
-#Fonction appelÃ©e quand on choisit un objet dans l'inventaire
+#Fonction appelÃƒÆ’Ã‚Â©e quand on choisit un objet dans l'inventaire
 def pickItem(item):
     global itemIndex, slots, txt, caracs
     txt.delete("all")
@@ -817,7 +836,7 @@ def displayInventory(offset = 0):
     b = Button(menu, text = "RETURN", command = invToMenu)
     b.place(x = 10, y = 10 + 6 * 74, width = 108, height = 64)
 
-#Fonction permettant de dÃ©sÃ©quiper un objet
+#Fonction permettant de dÃƒÆ’Ã‚Â©sÃƒÆ’Ã‚Â©quiper un objet
 def equipmentUnequip(item):
     global stats, itemIndex, txt
     stats["items"][itemIndex[item]["slot"]] = "VOID"
@@ -827,7 +846,7 @@ def equipmentUnequip(item):
     clearTxt()
     displayEquipment()
 
-#Fonction appelÃ©e quand on choisit un objet Ã©quipÃ©
+#Fonction appelÃƒÆ’Ã‚Â©e quand on choisit un objet ÃƒÆ’Ã‚Â©quipÃƒÆ’Ã‚Â©
 def pickEquipment(item):
     global itemIndex, stats
     yo = 10
@@ -842,7 +861,7 @@ def pickEquipment(item):
         txt.create_text(90, yo, text = t, anchor = NW)
         yo += 15
 
-#Fonction permettant d'afficher l'Ã©quipement
+#Fonction permettant d'afficher l'ÃƒÆ’Ã‚Â©quipement
 def displayEquipment():
     global stats, menu
     lock()
@@ -871,7 +890,7 @@ def showMenu():
     e = Button(menu, text = "Equipement", command = displayEquipment)
     e.place(x = 10, y = 84, width = 108, height = 64)
 
-#Fonction permettant d'afficher l'Ã©cran de combat
+#Fonction permettant d'afficher l'ÃƒÆ’Ã‚Â©cran de combat
 def fightScreen(name):
     global main, images, myTurn, myhp, mymp, hishp, stats, estats
 
@@ -958,7 +977,7 @@ def openChest(coords, i):
         showMenu()
         unlock()
 
-#Fonction permetttant d'intÃ©ragir avec des blocs
+#Fonction permetttant d'intÃƒÆ’Ã‚Â©ragir avec des blocs
 def blockAction(block):
   global stats, direction,x ,y
   if block == VOID_BLOCK:
@@ -996,7 +1015,7 @@ def loadAnotherLevel(level):
     draw(xOffset, yOffset)
     unlock()
 
-#Fonction permettant de dÃ©clencher des triggers
+#Fonction permettant de dÃƒÆ’Ã‚Â©clencher des triggers
 def triggerAction(x , y, name):
   global width, blocks, pnjs, triggers, main, dialogs, enemyIndex, chests, canFight, xOffset, yOffset
   if name.startswith("FIGHT:"):
@@ -1174,7 +1193,7 @@ def regenToGame():
     clearTxt()
     unlock()
 
-#Fonction permettant de rÃ©cupÃ©rer ses HP/MP
+#Fonction permettant de rÃƒÆ’Ã‚Â©cupÃƒÆ’Ã‚Â©rer ses HP/MP
 def regen():
     global stats, txt
     stats["HP"] = stats["maxHP"]
@@ -1353,7 +1372,7 @@ def loadResources(f):
   for block in blocks:
     images[block] = loadImage(blockIndex[block])
 
-#Fonction d'ajout d'un objet Ã  l'inventaire du joueur
+#Fonction d'ajout d'un objet ÃƒÆ’Ã‚Â  l'inventaire du joueur
 def inventoryAdd(name):
     global stats
     if name in stats["inventory"].keys():
@@ -1368,7 +1387,7 @@ def inventoryRemove(name):
     if stats["inventory"][name] == 0:
         stats["inventory"].pop(name, None)
 
-#Fonction de vÃ©rification
+#Fonction de vÃƒÆ’Ã‚Â©rification
 def check():
     global stats
     if stats["HP"] > stats["maxHP"]:
@@ -1376,7 +1395,7 @@ def check():
     if stats["MP"] > stats["maxMP"]:
         stats["MP"] = stats["maxMP"]
 
-#Fonction permettant d'Ã©quiper un objet de l'inventaire
+#Fonction permettant d'ÃƒÆ’Ã‚Â©quiper un objet de l'inventaire
 def equip(name):
     global stats, itemIndex, caracs, slots
     if itemIndex[name]["slot"] in slots:
@@ -1388,7 +1407,7 @@ def equip(name):
                     stats[key] += itemIndex[name][key]
             check()
 
-#Fonction permettant de dÃ©sÃ©quiper un objet
+#Fonction permettant de dÃƒÆ’Ã‚Â©sÃƒÆ’Ã‚Â©quiper un objet
 def unequip(name):
     global stats, itemIndex, caracs
     if name in stats["items"].values():
@@ -1399,7 +1418,7 @@ def unequip(name):
                 stats[key] -= itemIndex[name][key]
         check()
 
-#Fonction traitant les entrÃ©es clavier
+#Fonction traitant les entrÃƒÆ’Ã‚Â©es clavier
 def keyListener(event):
   global LEFT, RIGHT, UP, DOWN, ENTER,blocksWidth, blocksHeight, x , y, direction, width, height, blocks, pnjs, triggers, xOffset, yOffset, txt, lastMove, canFight
   if isLocked() == True:
@@ -1449,7 +1468,7 @@ def keyListener(event):
     draw(xOffset,yOffset)
     print(str(x) + "     " + str(y))
 
-#DÃ©but du programme principal
+#DÃƒÆ’Ã‚Â©but du programme principal
 createWindow(keyListener)
 
 images["Background"] = loadImage("background.png")
