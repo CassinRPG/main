@@ -370,19 +370,39 @@ def takeDamage(amount):
 
 #Fonction testant l'esquive d'une attaque
 def dodgeTest():
-    global stats, estats, myTurn, main
+    global stats, estats, myTurn, main # déclarations variables globales
+    stats["dexterity"]=s               # déclarations de variables intermédiaires pour pouvoir modifier les stats temporairement
+    estats["dexterity"]=es
     if myTurn:
-        if random.random() * estats["dexterity"] <= random.random() * stats["dexterity"]:
+        if stats["dexterity"]>=estats["dexterity"] :    # test niveau dext stats attaquant > attaqué
+            if s-es>=((80*s)/100) :                     # si diff sup à  80% augmentation légère des stats de l'attaqué
+                es=(20*stats/100)
+            elif s-es>=((30*s)/100) :                   # si si diff sup à  30% augmentation plus fortes des stats de l'attaqué
+                es=es+(s-es)/4
+            else :
+                pass                                    # sinon rien
+        else :
+            s=es                                        # si attaquant <= attaqué valeurs égales (pour rester à  1/2 ou moins de dodge)
+        if random.random()*es<= random.random()*s:
+            return True                                 # si stat attaqué*nb random < à  stat attaquant*nb random
+        else:                                           # Attaqué touché
+            a = main.create_text(64, 64, text = "DODGE !", tag="to_delete")
+            main.update()
+            return False                                # Sinon esquive (+ texte l'annonçant)
+    else :                                              # Même système en inversant attaquant et attaqué c'est le héros qui cherche à esquiver et plus le monstre
+        if estats["dexterity"]>=stats["dexterity"] :
+            if es-s>=((80*es)/100) :
+                s=(20*es/100)
+            elif es-s>=((30*es)/100) :
+                s=s+(es-s)/4
+            else :
+                pass
+        else :
+            s=es
+        if random.random()*s<= random.random()*es:
             return True
         else:
             a = main.create_text(64, 64, text = "DODGE !", tag="to_delete")
-            main.update()
-            return False
-    else:
-        if random.random() * estats["dexterity"] > random.random() * stats["dexterity"]:
-            return True
-        else:
-            a = main.create_text(448, 64, text = "DODGE !", tag="to_delete")
             main.update()
             return False
 
