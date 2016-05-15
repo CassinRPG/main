@@ -393,12 +393,12 @@ def takeDamage(amount):
 #Fonction testant l'esquive d'une attaque
 def dodgeTest():
     global stats, estats, myTurn, main # déclarations variables globales
-    stats["dexterity"]=s               # déclarations de variables intermédiaires pour pouvoir modifier les stats temporairement
-    estats["dexterity"]=es
+    s=stats["dexterity"]               # déclarations de variables intermédiaires pour pouvoir modifier les stats temporairement
+    es=estats["dexterity"]
     if myTurn:
         if stats["dexterity"]>=estats["dexterity"] :    # test niveau dext stats attaquant > attaqué
             if s-es>=((80*s)/100) :                     # si diff sup à  80% augmentation légère des stats de l'attaqué
-                es=(20*stats/100)
+                es=(20*s/100)
             elif s-es>=((30*s)/100) :                   # si si diff sup à  30% augmentation plus fortes des stats de l'attaqué
                 es=es+(s-es)/4
             else :
