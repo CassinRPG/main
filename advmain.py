@@ -365,7 +365,7 @@ def updateFightScreen():
     main.update()
 
 
-#Fonction pour faire des dÃƒÆ’Ã‚Â©gÃƒÆ’Ã‚Â¢ts ÃƒÆ’Ã‚Â  l'ennemi
+#Fonction pour faire des degats a l'ennemi
 def dealDamage(amount):
     global stats, estats, main, menu, hishp
     amount = int(amount)
